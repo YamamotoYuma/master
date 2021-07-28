@@ -1,0 +1,42 @@
+.bl_pagenation {
+    display: flex;
+    overflow: auto;
+}
+
+.bl_pagenation_inner {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    & > *:last-child {
+        margin-right: 0;
+    }
+    & > li{
+        margin-right: 15px;
+    }
+}
+
+.bl_pagenation_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $theme_color;
+    color: $theme_color;
+    text-decoration: none;
+    transition: .25s;
+    &:visited {
+        color: $theme_color;
+    }
+    &:focus,
+    &:hover {
+        background-color: $theme_color;
+        color: #FFF;
+        opacity: .75;
+    }
+    &.is_active {
+        background-color: $theme_color;
+        color: #fff;
+        pointer-events: none;
+    }
+}

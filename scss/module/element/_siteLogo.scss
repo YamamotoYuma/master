@@ -1,0 +1,22 @@
+.el_siteLogo { //サイトロゴ（画像ベース）
+    width: 150px;
+    & img {
+        vertical-align: middle;
+    }
+    &:focus,
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.el_siteTtl { //サイトタイトル（テキストベース）
+    display: inline-block;
+    color: $footer_fontColor;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    &:focus,
+    &:hover {
+        opacity: .8;
+    }
+}

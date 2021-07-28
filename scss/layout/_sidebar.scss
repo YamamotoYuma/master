@@ -1,0 +1,56 @@
+.ly_cont_side {
+    .widget {
+        > ul {
+            li {
+                @include fontSize(14);
+                a {
+                    text-decoration: none;
+                    color: $base_fontColor;
+                    display: block;
+                    padding: 10px .5em 8px;
+                    border-bottom: 1px solid rgba(0,0,0,.05);
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------
+    ウィジェットタイトル
+--------------------------------*/
+/*------ サイドバー -------*/
+.el_sideBarTtl {
+    @include fontSize(18);
+    position: relative;
+    padding: 0.6em 0.8em 0.5em;
+    margin-bottom: 1.2em;
+    color: #fff;
+    background-color: $theme_color;
+    border-radius: 4px;
+    line-height: 1;
+    font-weight: 500;
+    &::before {
+        content: '';
+        position: absolute;
+        top: auto;
+        left: 40px;
+        bottom: -20px;
+        width: auto;
+        margin-left: -10px;
+        border: 10px solid transparent;
+        border-top: 10px solid $theme_color;
+        z-index: 2;
+        height: auto;
+        background-color: transparent!important;
+    }
+}
+
+/*------ 投稿コンテンツ下 -------*/
+.el_underContTtl {
+    @include fontSize(22);
+    font-weight: 500;
+    padding: .8em 0 .7em;
+    border-top: 2px solid $theme_color;
+    border-bottom: 1px solid $base_borderColor;
+    margin-bottom: 1.2em;
+}

@@ -1,0 +1,164 @@
+/*基本*/
+.el_btn {
+    display: inline-block;
+    width: 300px;
+    max-width: 100%;
+    padding: 20px 10px;
+    background-color: $theme_color;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    color:  #fff;
+    @include fontSize();
+    text-align: center;
+    text-decoration: none;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        background-color: #fff;
+        border-color: currentColor;
+        color: $theme_color;
+    }
+}
+
+/*矢印付き*/
+.el_btn.el_btn__arrowRight {
+    position: relative;
+    padding: {
+        right: 2em;
+        left: 1.38em;
+    }
+    &::after{
+        content: '\f061';
+        position: absolute;
+        top: 50%;
+        right: .83em;
+        @include fas;
+        transform: translateY(-50%);
+    }
+}
+
+/*角丸ボタン*/
+.el_roundedBtn {
+    display: inline-block;
+    width: 236px;
+    max-width: 100%;
+    padding: 15px 10px;
+    background-color: $theme_color;
+    border: 2px solid transparent;
+    border-bottom-color: #d40152;
+    border-radius: 10px;
+    color:  #fff;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        background-color: #fff;
+        border-color: currentColor;
+        color: $theme_color;
+    }
+}
+
+/*アイコンボタン*/
+.el_beforeIconBtn {
+    position: relative;
+    display: inline-block;
+    padding: .2em .3em;
+    border: 1px solid currentColor;
+    color: $theme_color;
+    text-decoration: none;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        background-color: $theme_color;
+        color: #fff;
+    }
+    &:before {
+        display: inline-block;
+        margin-right: .5em;
+        @include fas;
+    }
+}
+
+/*アイコン：ダウンロード*/
+.el_beforeIconBtn.el_beforeIconBtn__download::before {
+    content: '\f019';
+}
+
+/*アイコン：拡大*/
+.el_beforeIconBtn.el_beforeIconBtn__zoom::before {
+    content: '\f00e';
+    // transform: translateY(-6%);
+}
+
+/*アイコンテキスト*/
+.el_beforeIcon::before{
+    display: inline-block;
+    margin-right: .3em;
+    color: $theme_color;
+    @include far;
+}
+
+/*アイコン：PDF*/
+.el_beforeIcon.el_beforeIcon__pdf::before{
+    content: '\f1c1';
+}
+
+/*アイコン：CSSによる実装*/
+.el_beforeIcon.el_beforeIcon__chevLeft::before {
+    content: '';
+    width: .375em;
+    height: .375em;
+    border: {
+        bottom: .125em solid $theme_color;
+        left: .125em solid $theme_color;
+    }
+    transform: rotate(45deg) translateY(-30%);
+}
+
+/*アイコン：CSSによる実装を末尾に移動*/
+.el_afterIcon::after {
+    display: inline-block;
+    margin-left: .3em;
+    color: $theme_color;
+    @include far;
+}
+.el_afterIcon.el_afterIcon__chevRight::after {
+    content: '';
+    width: .375em;
+    height: .375em;
+    border: {
+        top: .125em solid $theme_color;
+        right: .125em solid $theme_color;
+    }
+    transform: rotate(45deg) translateY(-30%);
+}
+
+/*フォーム：送信ボタン*/
+.el_btn_submit_wrapper {
+    text-align: center;
+    & .ajax-loader {
+        display: none!important;
+    }
+}
+input[type ="submit"].el_btn_submit {
+    display: inline-block;
+    border-radius: 5px;
+    @include fontSize(16);
+    width: 150px;
+    max-width: 100%;
+    padding: .7em;
+    background-color: $theme_color;
+    border: 2px solid transparent;
+    color:  #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        background-color: #fff;
+        border-color: currentColor;
+        color: $theme_color;
+    }
+}

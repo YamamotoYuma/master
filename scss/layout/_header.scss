@@ -1,0 +1,64 @@
+/*--------------------------------
+    ヘッダー
+--------------------------------*/
+.ly_header{
+    padding: {
+        top: 20px;
+    }
+    border: {
+        bottom: 1px solid $base_borderColor;
+    }
+    &_inner{
+        @include contentArea;
+        @include media(sm) {
+            padding-top: 5px;
+        }
+    }
+}
+
+.bl_headerUtils {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    & .el_btn { //お問い合わせボタン
+        width: auto;
+        padding: 10px 20px;
+        box-shadow: none;
+    }
+}
+
+.bl_headerNav { //グローバルナビゲーション
+    display: flex;
+    justify-content: space-between;
+    & > li {
+        flex-grow: 1;
+        text-align: center;
+        &:last-child > a::after {
+            content: none;
+        }
+        & > a {
+            position: relative;
+            display: block;
+            padding: 15px 5px;
+            border-bottom: 4px solid transparent;
+            color: $base_fontColor;
+            text-decoration: none;
+            transition: .25s;
+            &:focus,
+            &:hover {
+                border-bottom-color: $accent_color;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1px;
+                height: 20px;
+                background-color: #ddd;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

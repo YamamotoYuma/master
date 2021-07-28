@@ -1,0 +1,11 @@
+.el_adminInfo {
+    color: $footer_fontColor;
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+.el_adminInfo_data {
+    font-size: 0.875em;
+    line-height: 1;
+    margin-bottom: 0.7142em;
+}

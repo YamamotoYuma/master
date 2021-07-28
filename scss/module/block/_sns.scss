@@ -1,0 +1,75 @@
+/*--------------------------------
+    SNSフォローボタン
+--------------------------------*/
+.bl_IconSns{
+    line-height: 1;
+    text-align: left;
+}
+.bl_IconSns_icon{ 
+    display: inline-block;
+    @include fontSize(25);
+    margin-right: .6em;
+    line-height: 1;
+    padding: .3em;
+    border-radius: 50%;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+.bl_IconSns_icon_inner {
+    position: relative;
+    display: block;
+    width: 1em;
+    height: 1em;
+    transition: all ease .3s;
+    &::before {
+        @include fab;
+        color: #fff;
+        position: absolute;
+        left: 50%;
+        transform:translateX(-50%);
+    }
+}
+
+/*------ instagram -------*/
+.bl_IconSns_icon__insta {
+    background:  linear-gradient(45deg, rgba(254,212,117,1) 0%,rgba(229,61,93,1) 50%,rgba(194,49,134,1) 70%,rgba(156,56,187,1) 100%);
+}
+.bl_IconSns_icon_inner__insta::before {
+    content: '\f16d';
+}
+
+/*------ facebook -------*/
+.bl_IconSns_icon__facebook {
+    background: #3b5998;
+}
+.bl_IconSns_icon_inner__facebook::before {
+    content: '\f39e';
+}
+
+/*------ twitter -------*/
+.bl_IconSns_icon__twitter {
+    background: #1da1f2;
+}
+.bl_IconSns_icon_inner__twitter::before {
+    content: '\f099';
+}
+
+/*------ youtube -------*/
+.bl_IconSns_icon__youtube {
+    background: #cd201f;
+}
+.bl_IconSns_icon_inner__youtube::before {
+    content: '\f167';
+}
+
+/*------ line -------*/
+.bl_IconSns_icon__line {
+    background: #08B901;
+}
+.bl_IconSns_icon_inner__line::before {
+    content: '\f3c0';
+}

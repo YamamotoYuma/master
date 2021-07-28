@@ -1,0 +1,55 @@
+/*基本*/
+.el_label {
+    display: inline-block;
+    padding: .2em .3em;
+    background-color: $accent_color;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+/*色違い*/
+.el_label.el_label__yellow {
+    background-color: #f1de00;
+    color: #000;
+}
+
+/*リンク*/
+a.el_label {
+    text-decoration: none;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        background-color: #fff;
+        border-color: currentColor;
+        color: $accent_color;
+    }
+}
+
+/*楕円*/
+.el_roundedLabel {
+    display: inline-block;
+    padding: .3em .9em;
+    background-color: $accent_color;
+    border-radius: 1em;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+/*フォームラベル：必須・任意*/
+.bl_inquiry .el_label{
+    @include fontSize(12);
+    padding: .1em 1.25em;
+    margin-right: 1em;
+    margin-bottom: .25em;
+}
+
+.el_label.el_label__need{ //必須
+    background-color: #CC3F00;
+}
+
+.el_label.el_label__any { //任意
+    background-color: #8CC0FC;
+}

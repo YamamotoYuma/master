@@ -1,0 +1,93 @@
+/*水平ボタンリスト*/
+.bl_horizBtnList {
+    display: flex;
+    justify-content: center;
+    & > *:last-child {
+        margin-right: 0;
+    }
+    & > li {
+        flex: 1 1 0;
+        max-width: 300px;
+        margin-right: 20px;
+    }
+    & .el_btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*ページャー*/
+.bl_horizBtnList__pager {
+    max-width: 100%;
+    & > li {
+        max-width: 222px;
+        margin-right: percentage(30 / 900);
+    }
+    & .el_btn {
+        padding: {
+            top: (24/14) * 1em;
+            bottom: (24/14) * 1em;
+            right: (10/14) * 1em;
+            left: (10/14) * 1em;
+        }
+        line-height: 1;
+        @include fontSize(14);
+        border-radius: 5px;
+        background: #021C5C;
+        box-shadow: none;
+        &:focus,
+        &:hover {
+        background-color: #fff;
+        border-color: currentColor;
+        color: #021C5C;
+        }
+        &.prev > i {
+            margin-right: 1em;
+        }
+        &.next > i {
+            margin-left: 1em;
+        }
+    }
+}
+
+/*ヘッダー並列ボタン*/
+.bl_horizBtnList.bl_headerUtilsUpper_inner_btnWrapper {
+    & > *:last-child {
+        margin-right: 0;
+    }
+    & > li {
+        flex: 1 1 0;
+        max-width: 100%;
+        margin-right: 10px;
+    }
+    & .el_btn {
+        white-space: nowrap;
+        font-size: 0.875rem;
+        padding: 1em 2.14em;
+        border-radius: 0 0 5px 5px;
+        border-color: transparent;
+        &.el_btn__ctaMail { //メール
+            background-color: $theme_color;
+            box-shadow: 0 2px 0 #00123E;
+        }
+        &.el_btn__ctaLine { //LINE
+            background-color: #00B723;
+            box-shadow: 0 2px 0 #017205;
+        }
+        & > img {
+            margin-right: 1em;
+            vertical-align: middle;
+        }
+        &:focus,
+        &:hover {
+            color: #FFF;
+            opacity: .8;
+        }
+        @include media(md) {
+            border-radius: 5px;
+        }
+    }
+}

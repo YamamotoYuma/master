@@ -1,0 +1,79 @@
+//--------------------------------
+//  フルードイメージ（比率固定）（別途高さ比率用パディング指定）
+//--------------------------------
+.ut_imgWrapper {
+    position: relative;
+    overflow: hidden;
+    & > img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateY(-50%);
+    }
+}
+
+//--------------------------------
+//  カード全体にリンクエリアを設定（タイトルと画像のホバー動作も設定）
+//--------------------------------
+.ut_cardLayer {
+    position: relative;
+    & > a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        &:focus ~ figure > img,
+        &:hover ~ figure > img {
+            transform: scale(1.2);
+        }
+        &:focus ~ h4,
+        &:hover ~ h4 {
+            color: $theme_color;
+        }
+    }
+    & > figure {
+        overflow: hidden;
+        & > img {
+            transition: .25s;
+        }
+    }
+    & > h4 {
+        transition: .25s;
+    }
+}
+
+//--------------------------------
+//  全幅表示
+//--------------------------------
+//------ パディングエリア無 -------//
+.ut_fullWidth {
+    @include contentAreaFullWidth;
+}
+
+//------ パディングエリア有 -------//
+.ut_fullWidthPadding {
+    @include contentAreaFullWidthPadding;
+}
+
+/*--------------------------------
+    レイアウト別非表示
+--------------------------------*/
+@include media(lg) {
+    .md {display:none!important;}
+    .sm {display:none!important;}
+    .smmd {display:none!important;}
+}
+@include media(md) {
+    .lg {display:none!important;}
+    .sm {display:none!important;}
+}
+@include media(sm) {
+    .lg {display:none!important;}
+    .md {display:none!important;}
+    .mdlg {display:none!important;}
+}

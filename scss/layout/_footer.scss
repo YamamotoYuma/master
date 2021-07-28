@@ -1,0 +1,44 @@
+/*--------------------------------
+    フッター
+--------------------------------*/
+.ly_footer {
+    padding: {
+        top: 20px;
+        bottom: 20px;
+    }
+    background: {
+        color: $footer_background;
+    }
+    &_inner {
+        @include contentArea;
+    }
+}
+
+/*------ フッター調整 -------*/
+.ly_footer_wrapper {
+    background: $footer_background;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    & .ly_footer {
+        padding-top: 0;
+        padding-bottom: 0;
+        background: transparent;
+    }
+}
+
+/*------ コピーライト -------*/
+.el_copyright {
+    display: block;
+    color: $footer_fontColor;
+    font-size: 12px;
+}
+
+.ly_footer .el_copyright {
+    padding-top: 10px;
+    text-align: center;
+}
+
+/*------ サイトタイトル -------*/
+.ly_footer .el_siteTtl {
+    margin-bottom: 1em;
+}

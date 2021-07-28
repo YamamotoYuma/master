@@ -1,0 +1,9 @@
+/*注釈*/
+.el_caution {
+    color: #d40152;
+}
+
+/*補足・付記*/
+.el_note {
+    @include fontSize(12);
+}

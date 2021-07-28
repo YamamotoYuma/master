@@ -1,0 +1,65 @@
+/*--------------------------------
+    サイト全体エリア
+--------------------------------*/
+.ly_siteBody { //ドロワーメニュー制御用
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.ly_siteBody_inner { //ドロワーメニュー制御用
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+}
+
+/*--------------------------------
+    コンテンツエリア
+--------------------------------*/
+/*------ 1カラム -------*/
+.ly_cont { //基本コンテンツエリア
+    @include contentArea;
+    width: 100%;
+    flex: 1;
+}
+
+.ly_cont_main {
+    & > *:first-child{
+        margin-top: 0;
+    }
+}
+
+/*------ 2カラム -------*/
+.ly_cont.ly_cont__col { //2カラムレイアウト
+    display: flex;
+    justify-content: space-between;
+    @include media(sm){
+        flex-direction: column;
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+    & .ly_cont_main { //メインバー
+        flex: 1;
+        @include media(sm){
+            margin-bottom: 50px;
+        }
+    }
+    & .ly_cont_side { //サイドバー
+        flex: 0 0 260px;
+        margin-left: (40 / $content_width_calc) * 100%;
+        @include media(sm){
+            margin-left: 0;
+        }
+    }
+}
+
+/*------ 上下パディング -------*/
+.ly_cont.ly_cont__single,
+.ly_cont.ly_cont__archive {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include smSectPadding(o);
+}

@@ -1,0 +1,21 @@
+.bl_vertPosts_item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $base_borderColor;
+    &:first-child {
+        padding-top: 0;
+    }
+}
+.bl_vertPosts_headr {
+    margin-bottom: 10px;
+}
+.ble_vertPosts_date {
+    font-size: 0.875rem;
+}
+.bl_vertPosts_ttl {
+    text-decoration: none;
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
+}

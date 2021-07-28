@@ -1,0 +1,7 @@
+.hp_floatL {float: left;}
+.hp_floatR {float: right;}
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}

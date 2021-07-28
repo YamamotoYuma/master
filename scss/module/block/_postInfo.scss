@@ -1,0 +1,47 @@
+.bl_postInfo_inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: -1em;
+    margin-bottom: -0.5em;
+    @include fontSize(12);
+    > * {
+        margin-right: 1em;
+        margin-bottom: .5em;
+    }
+}
+
+.el_labelPostInfo {
+    font-size: inherit;
+    &__beforeIcon_date::before {
+        @include fas;
+        content: '\f073';
+        margin-right: .25em;
+    }
+    &__badgeCat {
+        background-color: #999;
+        color: #fff;
+        border-radius: .25rem;
+        text-decoration: none;
+        padding: .25em 1em;
+        line-height: 1;
+        &:focus,
+        &:hover {
+            color: #fff;
+        }
+    }
+    &__badgeTag {
+        color: #999;
+        border: 1px solid currentColor;
+        border-radius: 20px;
+        text-decoration: none;
+        padding: .25em 1em;
+        line-height: 1;
+        &:focus,
+        &:hover {
+            background: #999;
+            border-color: transparent;
+            color: #fff;
+        }
+    }
+}

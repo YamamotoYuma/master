@@ -1,0 +1,67 @@
+/*--------------------------------
+    H1タイトル
+--------------------------------*/
+.el_lv1Heading {
+    padding: 1em 10px;
+    background-color: $theme_color;
+    color: #fff;
+    text-align: center;
+    & > span {
+        position: relative;
+        display: inline-block;
+        transform: translateY(-20%);
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 80px;
+            height: 1px;
+            background-color: currentColor;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/*------ 投稿タイトル -------*/
+.el_ttl__single {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $base_borderColor;
+}
+
+
+/*--------------------------------
+    H2タイトル
+--------------------------------*/
+.el_lv2Heading {
+    padding-bottom: 10px;
+    border-bottom: 4px solid $theme_color;
+    font-weight: bold;
+}
+
+/*--------------------------------
+    H3タイトル
+--------------------------------*/
+.el_lv3Heading {
+    padding-bottom: 6px;
+    border-bottom: 2px solid $theme_color;
+    font-weight: bold;
+}
+
+/*--------------------------------
+    H4タイトル
+--------------------------------*/
+.el_lv4Heading{
+    padding-left: 6px;
+    border-left: 2px solid $theme_color;
+    font-weight: bold;
+}
+
+/*--------------------------------
+    H5タイトル
+--------------------------------*/
+.el_lv5Heading{
+    color: $theme_color;
+    font-weight: bold;
+}

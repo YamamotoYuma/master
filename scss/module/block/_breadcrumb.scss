@@ -1,0 +1,21 @@
+.bl_breadcrumb { //パンくずリスト
+    overflow-x: auto;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: #efefef;
+    @include fontSize(14);
+    & > ul {
+        @include contentArea;
+        display: flex;
+        // flex-wrap: wrap;
+        margin-bottom: -5px;
+        & > li {
+            white-space: nowrap;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            & .bl_breadcrumb_sep {
+                margin-right: 10px;
+            }
+        }
+    }
+}

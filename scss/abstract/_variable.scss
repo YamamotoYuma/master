@@ -1,0 +1,59 @@
+//--------------------------------
+//  ルートフォントサイズ（remの基本サイズ：100％で16px）
+//--------------------------------
+$root_em: 100;
+
+//--------------------------------
+//  フォントファミリー
+//--------------------------------
+$base_fontFamily:  "メイリオ",Meiryo,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",Hiragino Sans,"Noto Sans JP",sans-serif; //ゴシック体
+$sub_fontFamily: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; //明朝体
+
+//--------------------------------
+//  ベースフォントカラー
+//--------------------------------
+$base_fontColor: #333;
+//------ リンク -------//
+$anchor_fontColor: #0069ff;
+//------ フッター -------//
+$footer_fontColor: #fff;
+//------ ヘッダー -------//
+$header_fontColor: #fff;
+
+//--------------------------------
+//  テーマカラー
+//--------------------------------
+$theme_color: #074750;
+$accent_color:  #92C130;
+$sub_color:  #021C5C;
+$second_color:  #EDF5F5;
+$layer_color: #fff;
+
+//------ ボーダー -------//
+$base_borderColor: #DDD;
+$theme_borderColor: #DCE8E3;
+
+//------ フッター背景 -------//
+$footer_background: #3C6668;
+
+//------ wysiwygユーティリティ -------//
+$content_uCoror: #ddd;
+
+//--------------------------------
+//  ブレイクポイント
+//--------------------------------
+$breakpoint_small: 767px;//モバイル
+$breakpoint_medium: 1020px;//タブレット
+
+//--------------------------------
+//  コンテンツ幅、ガター
+//--------------------------------
+$content_width_calc: 1200; //コンテンツ幅（数値）
+$content_width: $content_width_calc * 1px; //コンテンツ幅（px）
+$content_gutter: 15px; //コンテンツエリア左右ガター
+
+//--------------------------------
+//  コンテンツ上下パディング
+//--------------------------------
+$containerPadding: 60px;
+$containerPadding_sm: 50px;
