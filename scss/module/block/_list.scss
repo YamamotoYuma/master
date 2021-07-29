@@ -1,4 +1,6 @@
-/*基本形：順序なしリスト*/
+/*--------------------------------
+    順序なしリスト
+--------------------------------*/
 .bl_bulletList > *:last-child {
     margin-bottom: 0;
 }
@@ -19,8 +21,7 @@
     }
 }
 
-//拡張パターン：順序なしリスト
-/*横並び：順序なしリスト*/
+/*------ 横並び -------*/
 .bl_bulletList.bl_bulletList__horiz {
     display: flex;
     flex-wrap: wrap;
@@ -35,8 +36,7 @@
     }
 }
 
-//バリエーション：順序なしリスト
-/*ネスト：順序なしリスト*/
+/*------ ネスト -------*/
 .bl_bulletList ul {
     padding-left: 1.5em;
     margin-top: 10px;
@@ -49,7 +49,9 @@
     }
 }
 
-/*基本形：順序ありリスト*/
+/*--------------------------------
+    順序ありリスト
+--------------------------------*/
 .bl_orderList {
     counter-reset: bl_orderList;
     & > *:last-child{
@@ -71,8 +73,7 @@
     }
 }
 
-//バリエーション：順序ありリスト
-/*ネスト：順序ありリスト*/
+/*------ ネスト -------*/
 .bl_orderList ol {
     margin-top: 10px;
     counter-reset: bl_childOrderList;
