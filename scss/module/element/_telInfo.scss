@@ -1,6 +1,10 @@
+/*--------------------------------
+    電話問い合わせ案内
+--------------------------------*/
 .el_telInfo{
     width: 100%;
 }
+
 .el_telInfo_phoneNum {
     line-height: 1;
     height: 1em;
@@ -8,12 +12,14 @@
     letter-spacing: .0076em;
     margin-bottom: .1923em;
 }
+
 .el_beforeImgIcon {
     display: inline-block;
     width: auto;
     height: 100%;
     margin-right: 0.34em;
 }
+
 .el_telInfo_receptionTime {
     line-height: 1;
     @include fontSize(12);
