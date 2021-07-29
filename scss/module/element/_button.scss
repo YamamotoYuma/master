@@ -1,4 +1,6 @@
-/*基本*/
+/*--------------------------------
+    ボタン
+--------------------------------*/
 .el_btn {
     display: inline-block;
     width: 300px;
@@ -20,7 +22,7 @@
     }
 }
 
-/*矢印付き*/
+/*------ 矢印付き -------*/
 .el_btn.el_btn__arrowRight {
     position: relative;
     padding: {
@@ -37,7 +39,7 @@
     }
 }
 
-/*角丸ボタン*/
+/*------ 角丸ボタン -------*/
 .el_roundedBtn {
     display: inline-block;
     width: 236px;
@@ -60,7 +62,7 @@
     }
 }
 
-/*アイコンボタン*/
+/*------ アイコンボタン -------*/
 .el_beforeIconBtn {
     position: relative;
     display: inline-block;
@@ -81,18 +83,18 @@
     }
 }
 
-/*アイコン：ダウンロード*/
+/*------ アイコン：ダウンロード -------*/
 .el_beforeIconBtn.el_beforeIconBtn__download::before {
     content: '\f019';
 }
 
-/*アイコン：拡大*/
+/*------ アイコン：拡大 -------*/
 .el_beforeIconBtn.el_beforeIconBtn__zoom::before {
     content: '\f00e';
     // transform: translateY(-6%);
 }
 
-/*アイコンテキスト*/
+/*------ アイコンテキスト -------*/
 .el_beforeIcon::before{
     display: inline-block;
     margin-right: .3em;
@@ -100,12 +102,12 @@
     @include far;
 }
 
-/*アイコン：PDF*/
+/*------ アイコン：PDF -------*/
 .el_beforeIcon.el_beforeIcon__pdf::before{
     content: '\f1c1';
 }
 
-/*アイコン：CSSによる実装*/
+/*------ アイコン：CSSによる実装 -------*/
 .el_beforeIcon.el_beforeIcon__chevLeft::before {
     content: '';
     width: .375em;
@@ -117,7 +119,7 @@
     transform: rotate(45deg) translateY(-30%);
 }
 
-/*アイコン：CSSによる実装を末尾に移動*/
+/*------ アイコン：CSSによる実装を末尾に移動 -------*/
 .el_afterIcon::after {
     display: inline-block;
     margin-left: .3em;
@@ -135,7 +137,9 @@
     transform: rotate(45deg) translateY(-30%);
 }
 
-/*フォーム：送信ボタン*/
+/*--------------------------------
+    フォーム：送信ボタン
+--------------------------------*/
 .el_btn_submit_wrapper {
     text-align: center;
     & .ajax-loader {
