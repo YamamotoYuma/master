@@ -1,16 +1,18 @@
-/*水平ボタンリスト*/
+/*--------------------------------
+    水平ボタンリスト
+--------------------------------*/
 .bl_horizBtnList {
     display: flex;
     justify-content: center;
-    & > *:last-child {
+    > *:last-child {
         margin-right: 0;
     }
-    & > li {
+    > li {
         flex: 1 1 0;
         max-width: 300px;
         margin-right: 20px;
     }
-    & .el_btn {
+    .el_btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -19,14 +21,16 @@
     }
 }
 
-/*ページャー*/
+/*--------------------------------
+    ページャー
+--------------------------------*/
 .bl_horizBtnList__pager {
     max-width: 100%;
-    & > li {
+    > li {
         max-width: 222px;
         margin-right: percentage(30 / 900);
     }
-    & .el_btn {
+    .el_btn {
         padding: {
             top: (24/14) * 1em;
             bottom: (24/14) * 1em;
@@ -53,17 +57,17 @@
     }
 }
 
-/*ヘッダー並列ボタン*/
+/*------ ヘッダー並列ボタン -------*/
 .bl_horizBtnList.bl_headerUtilsUpper_inner_btnWrapper {
-    & > *:last-child {
+    > *:last-child {
         margin-right: 0;
     }
-    & > li {
+    > li {
         flex: 1 1 0;
         max-width: 100%;
         margin-right: 10px;
     }
-    & .el_btn {
+    .el_btn {
         white-space: nowrap;
         font-size: 0.875rem;
         padding: 1em 2.14em;
@@ -77,7 +81,7 @@
             background-color: #00B723;
             box-shadow: 0 2px 0 #017205;
         }
-        & > img {
+        > img {
             margin-right: 1em;
             vertical-align: middle;
         }
