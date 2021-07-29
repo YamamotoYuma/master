@@ -1,14 +1,8 @@
-/*ここにSASS*/
+/*--------------------------------
+スタイルリセット
+--------------------------------*/
 * {
     box-sizing: border-box;
-}
-
-input[type="color"]::-webkit-color-swatch {
-    border: none;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
 }
 
 html, body, div, span, object, iframe,
@@ -33,13 +27,48 @@ time, mark, audio, video {
     font-weight:inherit;
 }
 
-body {
-    line-height:1;
+html {
+    font-size: $root_em * 1%;
+}
+
+body{
+    color: $base_fontColor;
+    font-family: $base_fontFamily;
+    font-feature-settings: "palt", none;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
     display:block;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+li > ul,
+li > ol {
+    margin-left: 0;
 }
 
 nav ul {
@@ -54,14 +83,6 @@ blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
-}
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
 }
 
 ins {
@@ -86,11 +107,6 @@ abbr[title], dfn[title] {
     cursor:help;
 }
 
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
 hr {
     display:block;
     height:1px;
@@ -107,39 +123,20 @@ input, select {
 input:focus {
     outline: none;
 }
-ul, ol {
-    list-style-type: none;
-}
-li > ul,
-li > ol {
-    margin-left: 0;
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
 }
 
-html {
-    font-size: $root_em * 1%;
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
 }
 
-body{
-    color: $base_fontColor;
-    font-family: $base_fontFamily;
-    font-feature-settings: "palt", none;
-    line-height: 1.5;
-    font-size: 1rem;
-}
-
-a{
-    color: $anchor_fontColor;
-}
-
-img{
-    max-width: 100%;
-    vertical-align: top;
-}
 
 /*Adobe webフォント読み込みのちらつきをなくす*/
 // html {
-//     visibility: hidden;
-//   }
-//   html.wf-active {
-//     visibility: visible;
-//   }
+    //     visibility: hidden;
+    //   }
+    //   html.wf-active {
+        //     visibility: visible;
+        //   }
