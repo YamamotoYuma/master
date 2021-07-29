@@ -1,4 +1,7 @@
-.bl_headerNav { //グローバルナビゲーション
+/*--------------------------------
+    グローバルナビゲーション
+--------------------------------*/
+.bl_headerNav {
     display: flex;
     justify-content: space-between;
     & > li {
@@ -33,42 +36,10 @@
     }
 }
 
-.js_stickyNav > .bl_headerNav { //ヘッダー固定ナビ
-    display: flex;
-    justify-content: space-between;
-    & > li {
-        flex-grow: 1;
-        text-align: center;
-        &:last-child > a::after {
-            content: none;
-        }
-        & > a {
-            position: relative;
-            display: block;
-            padding: 10px 5px;
-            border-bottom: 4px solid transparent;
-            color: $base_fontColor;
-            text-decoration: none;
-            transition: .25s;
-            &:focus,
-            &:hover {
-                border-bottom-color: $accent_color;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 1px;
-                height: 20px;
-                background-color: #ddd;
-                transform: translateY(-50%);
-            }
-        }
-    }
-}
-
-.js_stickyNav {
+/*--------------------------------
+    ヘッダー固定ナビゲーション
+--------------------------------*/
+.bl_stickyNav_wrapper {
     transition: 1s;
     top: -100px;
     visibility: hidden;
@@ -83,11 +54,58 @@
     }
 }
 
-.js_stickyNav.is_scroled { //スクロール発火によるヘッダー固定ナビ
+.bl_stickyNav {
+    display: flex;
+    justify-content: space-between;
+    @include fontSize(14);
+    & > li {
+        flex-grow: 1;
+        text-align: center;
+        &:last-child > a::after {
+            content: none;
+        }
+        & > a {
+            position: relative;
+            display: block;
+            padding: 1em .357em;
+            color: $base_fontColor;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .25s;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1px;
+                height: 20px;
+                background-color: #ddd;
+                transform: translateY(-50%);
+            }
+            &::before {
+                content: '';
+                width: 0;
+                height: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $accent_color;
+                transition: .3s;
+            }
+            &:focus::before,
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.bl_stickyNav_wrapper.is_scroled { //スクロール発火によるヘッダー固定ナビ
     visibility: visible;
     top: 0;
 }
 
-body.admin-bar .js_stickyNav.is_scroled {
+body.admin-bar .bl_stickyNav_wrapper.is_scroled { //ログイン時の位置調整（アドミンバー対策）
     top: 32px;
 }

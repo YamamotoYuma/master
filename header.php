@@ -1,14 +1,16 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Underscores
- */
+/*--------------------------------
+ *	変数定義
+--------------------------------*/
+$nav = array( //グローバルナビゲーション
+	'container' => false,
+	'menu_class' => 'bl_headerNav',
+	'theme_location' => 'menu-1',
+);
 
+/*--------------------------------
+ *	DOM生成
+--------------------------------*/
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -41,22 +43,11 @@
 				</div>
 				<!--/.bl_headerUtils-->	
 
-				<nav>
-					<?php
-					$nav = array(
-						'container' => false,
-						'menu_id' => 'primary-menu', //「ul」要素にID指定
-						'menu_class' => 'bl_headerNav', //「ul」要素にクラス指定
-						'theme_location' => 'menu-1', //変更しない
-					);
-					wp_nav_menu( $nav );
-					?>
-				</nav>
-
-				<nav class="js_stickyNav"><?php wp_nav_menu( $nav ); //上部固定ナビゲーション?></nav>
+				<nav class="bl_headerNav_wrapper"><?php wp_nav_menu( $nav ); //グローバルナビゲーション ?></nav>
 
 			</div>
 			<!--/.ly_header_inner-->
 		</header>
 		<!--/.ly_header-->
+		<?php get_template_part( 'template-parts/stickyNav' ); //ヘッダー固定ナビ ?>
 		<?php get_template_part( 'template-parts/breadCrumb' ); //パンくずリスト読み込み ?>
