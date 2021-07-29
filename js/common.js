@@ -29,6 +29,14 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	/*------ アコーディオン：モバイルメニュー -------*/
+	$(".bl_mobileMenu_nav .sub-menu").css("display", "none");
+	$(".bl_mobileMenu_nav .menu-item-has-children").append('<span class="bl_mobileMenu_accBtn"></span>');
+	$(".bl_mobileMenu_accBtn").click(function () {
+		$(".sub-menu").toggleClass("js_open").slideToggle();
+		$(".bl_mobileMenu_accBtn").toggleClass("js_open");
+	});
+
 	/*--------------------------------
 	 * ページトップへ戻る：100pxスクロールしたら表示
 	--------------------------------*/

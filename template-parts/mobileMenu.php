@@ -1,15 +1,23 @@
-<!--モバイルメニュー：トリガー-->
+<?php
+/*--------------------------------
+ *  トリガーボタン
+--------------------------------*/
+?>
 <div class="el_menuTrigger_wrapper">
     <div class="el_menuTrigger js_menuTrigger" href="">
         <span></span>
         <span></span>
         <span></span>
     </div>
-<!-- ./el_menuTrigger -->
+    <!-- ./el_menuTrigger -->
 </div>
 <!-- ./el_menuTrigger_wrapper -->
 
-<!--モバイルメニュー：ドロワー-->
+<?php
+/*--------------------------------
+ *  ドロワーエリア
+--------------------------------*/
+ ?>
 <div class="bl_mobileMenu js_mobileMenu">
     <nav>
     <?php
