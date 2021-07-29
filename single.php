@@ -15,7 +15,7 @@
         <!-- /.ly_sect ly_sect__widget -->
         <?php endif ;?>
 
-        <?php get_template_part( 'template-parts/pager', get_post_type() ); //ページャー読み込み ?>
+        <?php get_template_part( 'template-parts/parts/pager', get_post_type() ); //ページャー読み込み ?>
 
         <?php endwhile; //END：メインループ ?>
 

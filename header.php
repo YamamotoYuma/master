@@ -49,5 +49,5 @@ $nav = array( //グローバルナビゲーション
 			<!--/.ly_header_inner-->
 		</header>
 		<!--/.ly_header-->
-		<?php get_template_part( 'template-parts/stickyNav' ); //ヘッダー固定ナビ ?>
-		<?php get_template_part( 'template-parts/breadCrumb' ); //パンくずリスト読み込み ?>
+		<?php get_template_part( 'template-parts/parts/stickyNav' ); //ヘッダー固定ナビ ?>
+		<?php get_template_part( 'template-parts/parts/breadCrumb' ); //パンくずリスト読み込み ?>

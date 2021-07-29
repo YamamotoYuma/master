@@ -6,19 +6,20 @@ $contact = '[contact-form-7 id="8" html_id="inline-validation-engine"]' //contac
 
 <?php get_header(); //ヘッダー読み込み?>
 
-<div class="ly_cont ly_cont__<?php echo $slug; ?> hp_containerPT hp_containerPB">
+<div class="ly_cont ly_cont__<?php echo $slug; ?>">
 	<main id="primary" class="site-main ly_cont_main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<header class="page-header ly_sect_pageHeader">
-			<h1 class="el_lv1Heading"><span><?php the_title(); //ページタイトル ?></span></h1>
-		</header>
+            <section class="ly_sect ly_sect__contact">
+                <header class="page-header ly_sect_pageHeader">
+                    <h1 class=""><span><?php the_title(); //ページタイトル ?></span></h1>
+                </header>
 
-			<section class="ly_sect_form">
 				<?php echo apply_filters('the_content', $contact); //contactform7呼び出し;?>
+                
 			</section>
-
+            <!-- /.ly_sect__contact -->
 		<?php endwhile; // have_posts() ?>
 
 	</main>

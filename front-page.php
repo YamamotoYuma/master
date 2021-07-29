@@ -5,30 +5,6 @@
 
 		<?php while ( have_posts() ) : the_post();?>
 
-			
-
-			<section class="ly_cont_vertPosts">
-				<div class="ly_cont_vertPosts_header">
-					<h2 class="uq_newsTtl">NEWS</h2>
-					<a href="#" class="el_label el_label__more">もっと見る<i class="fas fa-angle-right"></i></a>
-				</div>
-				<?php
-				$args = [ //sub.phpのパラメーターを指定
-					// 'type' => 'post', //投稿タイプスラッグを入力する
-					// 'num' => '4', //表示したい記事数を数字で入力する
-					// 'taxonomy' => 'category', //該当タクソノミーを入力する
-					// 'term' => '', //タームを限定する場合タームスラッグを入力
-					// 'orderby' => 'date', //並び順を指定
-					// 'order' => 'DESC', //昇順（ASC）か降順（DESC）で指定
-					// 'current' => '', //'on'もしくは''を入力 'on'なら同一タームに限定する
-				]?>
-				
-				<?php get_template_part( 'template-parts/sub', '', $args ); //サブループをインク
-				?>
-			</section>
-			
-			
-
 
 		<?php endwhile; ?>
 
