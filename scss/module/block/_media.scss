@@ -1,4 +1,6 @@
-/*基本形*/
+/*--------------------------------
+    メディア
+--------------------------------*/
 .bl_media {
     display: flex;
     align-items: center;
@@ -29,9 +31,7 @@
     font-weight: bold;
 }
 
-//拡張パターン
-
-/*逆位置*/
+/*------ 逆位置 -------*/
 .bl_media.bl_media__rev {
     flex-direction: row-reverse;
 }
@@ -48,9 +48,7 @@
     }
 }
 
-//バリエーション
-
-/*画像半分サイズ*/
+/*------ 画像半分サイズ -------*/
 .bl_halfMedia {
     display: flex;
     align-items: center;
@@ -79,25 +77,4 @@
     margin-bottom: 10px;
     @include fontSize(18);
     font-weight: bold;
-}
-
-/*--------------------------------
-    シンプルなメディア
---------------------------------*/
-.bl_simpleMedia {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 0 percentage(30 / $content_width_calc) * -1;
-    @include media(sm) {
-        display: block;
-    }
-}
-
-.bl_simpleMedia_inner {
-    flex: 1;
-    margin: 0 percentage(30 / $content_width_calc);
-    p {
-        line-height: 1.8;
-        text-align: justify;
-    }
 }
