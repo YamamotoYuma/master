@@ -1,12 +1,14 @@
-
+/*--------------------------------
+    フォーム基本スタイル
+--------------------------------*/
 .bl_inquiry{
-    & input,
-    & select,
-    & textarea { //入力エリア
+    input,
+    select,
+    textarea { //入力エリア
         background-color: #fff;
         border-radius: 0;
     }
-    & th {
+    th {
         width: 25%;
         font-weight: bold;
         @include fontSize(14);
@@ -15,60 +17,66 @@
         padding-right: .5em;
         padding-bottom: .5em;
     }
-    & td {
+    td {
         padding-bottom: 2em;
-        & > span {
+        > span {
             display: block;
-            & * {
+            * {
                 margin-left: 0;
             }
-            & input:not([type = "checkbox"]):not([type = "radio"]),
-            & textarea {
+            input:not([type = "checkbox"]):not([type = "radio"]),
+            textarea {
                 width: 100%;
                 padding-top: 7px;
                 padding-bottom: 7px;
             }
         }
     }
-    & th,
-    & td {
+    th,
+    td {
         @include media(sm) {
             width: 100%;
             display: block;
         }
     }
-    & .ajax-loader {
+    .ajax-loader {
         display: none!important;
     }
 }
 
-/*ドロップダウン*/
-    .drop option:first-child{
-        color: #ddd;
-    }
-    /*ラジオボタンを縦並び指定*/
-    .verticallist .wpcf7-list-item{
-     display:block;
-    }
+/*--------------------------------
+    選択エリア
+--------------------------------*/
+/*------ ドロップダウン -------*/
+.drop option:first-child{
+    color: #ddd;
+}
 
-/*
-ーーーーーーーーーーーーーーーーーーーーーplaceholderのフォントカラー指定
-*/
-/* Chrome, Safari */
+/*------ ラジオボタンを縦並び指定 -------*/
+.verticallist .wpcf7-list-item{
+    display:block;
+}
+
+/*--------------------------------
+    placeholderのフォントカラー指定
+--------------------------------*/
+/*------ Chrome, Safari -------*/
 input::-webkit-input-placeholder{
     color: #CCCCCC;
 }
 textarea::-webkit-input-placeholder{
     color: #CCCCCC;
 }
-/* Firefox */
+
+/*------ Firefox -------*/
 input::-moz-placeholder{
     color: #CCCCCC;
 }
 textarea::-moz-placeholder{
     color: #CCCCCC;
 }
-/* Firefox 18以前 */
+
+/*------ Firefox 18以前 -------*/
 input:-moz-placeholder{
     color: #CCCCCC;
 }
@@ -76,9 +84,9 @@ textarea:-moz-placeholder{
     color: #CCCCCC;
 }
 
-/*
-ーーーーーーーーーーーーーーーーーーーーーインラインバリデーション
-*/
+/*--------------------------------
+    バリデーションスタイル
+--------------------------------*/
 .formError{
     margin-top: 10px!important;
     display: block!important;
