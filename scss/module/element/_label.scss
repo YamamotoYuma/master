@@ -1,4 +1,6 @@
-/*基本*/
+/*--------------------------------
+    ラベル
+--------------------------------*/
 .el_label {
     display: inline-block;
     padding: .2em .3em;
@@ -9,13 +11,13 @@
     border: 2px solid transparent;
 }
 
-/*色違い*/
+/*------ 色違い -------*/
 .el_label.el_label__yellow {
     background-color: #f1de00;
     color: #000;
 }
 
-/*リンク*/
+/*------ リンク -------*/
 a.el_label {
     text-decoration: none;
     transition: .25s;
@@ -27,7 +29,7 @@ a.el_label {
     }
 }
 
-/*楕円*/
+/*------ 楕円 -------*/
 .el_roundedLabel {
     display: inline-block;
     padding: .3em .9em;
@@ -38,7 +40,7 @@ a.el_label {
     font-weight: bold;
 }
 
-/*フォームラベル：必須・任意*/
+/*------ フォームラベル：必須・任意 -------*/
 .bl_inquiry .el_label{
     @include fontSize(12);
     padding: .1em 1.25em;

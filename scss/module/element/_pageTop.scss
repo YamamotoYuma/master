@@ -1,9 +1,12 @@
+/*--------------------------------
+    ページトップへ戻るボタン
+--------------------------------*/
 .el_pageTop {
     display: none;
     position: fixed;
     right: 15px;
     bottom: 15px;
-    & > a {
+    > a {
         position: relative;
         display: block;
         background-color: #777;
@@ -38,7 +41,7 @@
     @include media(sm) {
         right: 7px;
         bottom: 7px;
-        & > a {
+        > a {
             width: 40px;
             height: 40px;
             &::before {

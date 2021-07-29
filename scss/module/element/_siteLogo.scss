@@ -1,6 +1,10 @@
-.el_siteLogo { //サイトロゴ（画像ベース）
+/*--------------------------------
+    サイトロゴ
+--------------------------------*/
+/*------ 画像ベース -------*/
+.el_siteLogo {
     width: 150px;
-    & img {
+    img {
         vertical-align: middle;
     }
     &:focus,
@@ -9,7 +13,8 @@
     }
 }
 
-.el_siteTtl { //サイトタイトル（テキストベース）
+/*------ テキストベース -------*/
+.el_siteTtl {
     display: inline-block;
     color: $footer_fontColor;
     font-size: 1.25rem;
