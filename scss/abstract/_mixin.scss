@@ -16,11 +16,17 @@
 
 //--------------------------------
 //  全幅セクション（1カラムレイアウトのみ適用可）
+//  @parm padding 左右のコンテンツエリアパディングを取る場合はpを入力
+//                null => コンテンツエリアパディングなし
+//                p => コンテンツエリアパディングあり
 //--------------------------------
-//------ コンテンツ幅パディング無し -------//
-@mixin contentAreaFullWidth {
+@mixin contentAreaFullWidth($padding:'') {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    @if $padding == p {
+        padding-left: calc(50vw - 50%);
+        padding-right: calc(50vw - 50%);
+    }
 }
 
 //------ コンテンツ幅パディング有り -------//
@@ -33,6 +39,12 @@
 
 //--------------------------------
 //  メディアクエリ制御（ブレイクポイントは[variable.scss]にて定義）
+//  @param size 適用デバイスの指定
+//              sm => モバイル
+//              md => タブレット
+//              lg => デスクトップ
+//              smmd => モバイル＋タブレット
+//              mdlg => タブレット＋デスクトップ
 //--------------------------------
 @mixin media($size) { //[引数]sm：モバイル
     @if $size == sm {
@@ -82,13 +94,15 @@
 
 //--------------------------------
 //  フォントサイズの単位をremに変換
+//  @parm size px単位のフォントサイズを指定
 //--------------------------------
-@mixin fontSize($size : (.16 * $root_em)) { //[引数]px単位のフォントサイズを指定
+@mixin fontSize($size : (.16 * $root_em)) {
     font-size: ($size/(.16 * $root_em)) * 1rem;
 }
 
 //--------------------------------
 //  webフォントの指定（別途読み込みの必要あり）
+//  @parm weight ウェイト指定
 //--------------------------------
 // @mixin din2014 ($weight :600) { //webフォント：din2014
 //     font-family: din-2014, sans-serif!important;
@@ -98,6 +112,11 @@
 
 //--------------------------------
 //  モバイルセクションパディング
+//  @param area t => セクションのエリアを指定（上下のパディング値を変動する）
+//              t => 上部セクション  （下パディング半分）
+//              b => 下部          （上パディング半分）
+//              o => 単独          （上下パディング半分）
+//              null => 中間
 //--------------------------------
 @mixin smSectPadding($area:'') { //[引数]$area= t：上部、$area= b：下部、$area= o：単独、引数なし：中間
     $top: 2;
@@ -112,7 +131,7 @@
         $top: 1;
         $bottom: 1;
     }
-    @include media(sm) { //モバイルのみに限定
+    @include media(sm) {
         padding-top: (50px / $top)!important;
         padding-bottom: (50px / $bottom)!important;
     }
@@ -120,6 +139,7 @@
 
 //--------------------------------
 //  フルードイメージ
+//  @param height 横幅に対する高さの割合を％で指定（単位省略）
 //--------------------------------
 @mixin fluid ($height:'62.5') { //[引数]横幅に対する高さの比率
     position: relative;
@@ -153,8 +173,9 @@
 
 //--------------------------------
 //  ハーフレイアウトメディアボックス
+//  @parm gap カラム間の隙間
 //--------------------------------
-@mixin half($gap:'60') { //[引数]
+@mixin half($gap:'60') {
     $halfgap : $gap/2;
     display: flex;
     margin: 0 percentage($halfgap / $content_width_calc) * -1;
