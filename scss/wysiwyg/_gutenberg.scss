@@ -1,4 +1,7 @@
-.bl_entryContent { //エディター入力エリア内
+/*--------------------------------
+    Gtenbergエディター内容出力エリア
+--------------------------------*/
+.bl_entryContent {
     margin: 0;
     > *:first-child {
         margin-top: 0;
@@ -103,10 +106,10 @@
     ol ol { //順序有りリスト：ネスト
         margin-top: 10px;
         counter-reset: bl_childOrderList;
-        & > *:last-child{
+        > *:last-child{
             margin-bottom: 0;
         }
-        & > li {
+        > li {
             position: relative;
             padding-left: 1em;
             margin-top: 10px;
@@ -126,7 +129,7 @@
             border-right-width: 0;
             overflow-x: auto;
         }
-        & table {
+        table {
             width: 100%;
             table-layout: fixed;
             @include media(sm) {
@@ -134,15 +137,15 @@
                 min-width: 100%;
             }
         }
-        & thead tr {
+        thead tr {
             background-color: #efefef;
             text-align: center;
         }
-        & th {
+        th {
             font-weight: bold;
         }
-        & th,
-        & td {
+        th,
+        td {
             padding: 15px;
             border-right: 1px solid $content_uCoror;
             border-bottom: 1px solid $content_uCoror;
@@ -151,18 +154,18 @@
                 white-space: nowrap;
             }
         }
-        & th:last-child,
-        & td:last-child {
+        th:last-child,
+        td:last-child {
             border-right-width: 0;
             @include media(sm) {
                 border-right-width: 1px;
             }
         }
-        & tbody tr:last-child td,
-        & tfoot tr:last-child td {
+        tbody tr:last-child td,
+        tfoot tr:last-child td {
             border-bottom-width: 0;
         }
-        & tfoot {
+        tfoot {
             border-top: 1px solid $content_uCoror;
         }
     }
@@ -184,6 +187,7 @@
     }
 }
 
+/*------ サムネイル中央表示 -------*/
 .post-thumbnail { //サムネイル中央表示
     text-align: center;
 }
