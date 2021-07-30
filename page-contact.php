@@ -11,15 +11,15 @@ $contact = '[contact-form-7 id="8" html_id="inline-validation-engine"]' //contac
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-            <section class="ly_sect ly_sect__contact">
-                <header class="page-header ly_sect_pageHeader">
-                    <h1 class=""><span><?php the_title(); //ページタイトル ?></span></h1>
-                </header>
+            <header class="page-header ly_sect_pageHeader">
+                <h1 class="el_lv2Heading el_lv2Heading__tbBorder"><span><?php the_title(); //ページタイトル ?></span></h1>
+            </header>
 
-				<?php echo apply_filters('the_content', $contact); //contactform7呼び出し;?>
+            <section class="ly_sect ly_sect__single">
+                <?php echo apply_filters('the_content', $contact); //contactform7呼び出し;?>
+            </section>
+            <!-- /.ly_sect ly_sect__single -->
                 
-			</section>
-            <!-- /.ly_sect__contact -->
 		<?php endwhile; // have_posts() ?>
 
 	</main>

@@ -56,9 +56,14 @@
     }
 }
 
-/*------ 上下パディング -------*/
+/*--------------------------------
+    特定スラッグ、テンプレート用上下パディング
+--------------------------------*/
 .ly_cont.ly_cont__single,
-.ly_cont.ly_cont__archive {
+.ly_cont.ly_cont__archive,
+.ly_cont.ly_cont__404,
+.ly_cont.ly_cont__contact,
+.ly_cont.ly_cont__privacy-policy {
     padding-top: 80px;
     padding-bottom: 80px;
     @include smSectPadding(o);
