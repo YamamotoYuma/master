@@ -27,38 +27,3 @@
         box-shadow: none;
     }
 }
-
-.bl_headerNav { //グローバルナビゲーション
-    display: flex;
-    justify-content: space-between;
-    & > li {
-        flex-grow: 1;
-        text-align: center;
-        &:last-child > a::after {
-            content: none;
-        }
-        & > a {
-            position: relative;
-            display: block;
-            padding: 15px 5px;
-            border-bottom: 4px solid transparent;
-            color: $base_fontColor;
-            text-decoration: none;
-            transition: .25s;
-            &:focus,
-            &:hover {
-                border-bottom-color: $accent_color;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 1px;
-                height: 20px;
-                background-color: #ddd;
-                transform: translateY(-50%);
-            }
-        }
-    }
-}
