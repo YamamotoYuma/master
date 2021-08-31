@@ -1,4 +1,12 @@
 <?php
+/**
+ *  FileName: サイドバー
+ *
+ * @package WordPress
+ */
+
+?>
+<?php
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }

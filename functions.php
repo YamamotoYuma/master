@@ -1,8 +1,15 @@
 <?php
+/**
+ *  FileName: インクルード用ファイル
+ *
+ * @package WordPress
+ */
 
-/*--------------------------------
-    incフォルダ インクルード
---------------------------------*/
+/*
+--------------------------------
+	incフォルダ インクルード
+--------------------------------
+*/
 /*------ カスタムヘッダー -------*/
 require get_template_directory() . '/inc/custom-header.php';
 
@@ -20,26 +27,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/*--------------------------------
-    functionsフォルダ インクルード
---------------------------------*/
+/*
+--------------------------------
+	functionsフォルダ インクルード
+
+--------------------------------
+*/
 /*------ ウィジェット、ナビゲーション関連 -------*/
-include( get_stylesheet_directory().'/functions/widgetAndNavi.php' );
+require get_stylesheet_directory() . '/functions/widgetAndNavi.php';
 
 /*------ Advanced Custom Field オプションページ関連 -------*/
-include( get_stylesheet_directory().'/functions/acfOptionPage.php' );
+require get_stylesheet_directory() . '/functions/acfOptionPage.php';
 
 /*------ カスタム投稿タイプ、カスタムタクソノミー -------*/
-include( get_stylesheet_directory().'/functions/costomPostType.php' );
+require get_stylesheet_directory() . '/functions/costomPostType.php';
 
 /*------ スタイルシート、スクリプトインクルード -------*/
-include( get_stylesheet_directory().'/functions/include_styleAndScript.php' );
+require get_stylesheet_directory() . '/functions/include_styleAndScript.php';
 
 /*------ ショートコード作成 -------*/
-include( get_stylesheet_directory().'/functions/shortCode.php' );
+require get_stylesheet_directory() . '/functions/shortCode.php';
 
 /*------ ユーザー定義関数 -------*/
-include( get_stylesheet_directory().'/functions/userDefined.php' );
+require get_stylesheet_directory() . '/functions/userDefined.php';
 
 /*------ その他のオプション定義 -------*/
-include( get_stylesheet_directory().'/functions/otherOption.php' );
+require get_stylesheet_directory() . '/functions/otherOption.php';
