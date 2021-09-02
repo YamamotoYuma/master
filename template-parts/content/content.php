@@ -9,7 +9,7 @@
 
 <section class="ly_sect__single ly_sect__single_header">
 
-	<?php get_template_part( 'template-parts/parts/postInfo' ); // 投稿メタデータ出力. ?>
+	<?php get_template_part( 'template-parts/parts/post-info' ); // 投稿メタデータ出力. ?>
 
 	<?php if ( is_singular() ) : ?>
 	<h1 class="entry-title el_ttl__single"><?php the_title(); // ポストタイトル. ?></h1>

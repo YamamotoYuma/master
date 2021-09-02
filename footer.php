@@ -37,7 +37,7 @@
 			</div>
 			<!-- /.ly_siteBody_inner -->
 
-			<?php get_template_part( 'template-parts/parts/mobileMenu' ); // モバイルメニューをインク. ?>
+			<?php get_template_part( 'template-parts/parts/mobile-menu' ); // モバイルメニューをインク. ?>
 
 			<div class="el_pageTop js_pageTop">
 				<a href="#"></a>
