@@ -1,6 +1,6 @@
 <?php
 /**
- * ページャー
+ * ヘッダー固定ナビ
  *
  * @package WordPress
  */
@@ -10,7 +10,7 @@
 *	変数定義
 --------------------------------
 */
-$nav_sticky = array( // ヘッダー固定ナビ.
+$nav_sticky = array(
 	'container'      => false,
 	'menu_class'     => 'bl_stickyNav', // 「ul」要素にクラス指定.
 	'theme_location' => 'menu-1', // 使用するメニューを指定.
