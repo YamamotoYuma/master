@@ -10,13 +10,13 @@
 
 <section class="ly_sect__single ly_sect__single_header">
 
-	<?php get_template_part( 'template-parts/parts/post-info' ); // 投稿メタデータ出力. ?>
+	<?php get_template_part( 'template-parts/parts/post-info' ); // 投稿メタデータ. ?>
 
-	<?php if ( is_singular() ) : ?>
-	<h1 class="el_lv2Heading el_lv2Heading__tbBorder" ><?php the_title(); // ポストタイトル. ?></h1>
-	<?php else : ?>
-	<h2 class="el_lv2Heading el_lv2Heading__tbBorder" ><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" ><?php the_title(); // ポストタイトル. ?></a></h2>
-	<?php endif; /** Is_singular(). */ ?>
+	<?php if ( is_singular() ) : // A. ?>
+		<h1 class="el_lv2Heading el_lv2Heading__tbBorder" ><?php the_title(); // ポストタイトル. ?></h1>
+	<?php else : // A. ?>
+		<h2 class="el_lv2Heading el_lv2Heading__tbBorder" ><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" ><?php the_title(); // ポストタイトル. ?></a></h2>
+	<?php endif; // A. ?>
 
 </section>
 <!-- /.ly_sect_singleHeader -->
@@ -51,5 +51,3 @@
 	<!-- /.bl_entryContent -->
 </article>
 <!-- /.ly_sect__single_main -->
-
-<!-- #post-<?php the_ID(); ?> -->

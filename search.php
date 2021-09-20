@@ -1,6 +1,6 @@
 <?php
 /**
- *  Template Name: 検索結果テンプレート
+ *  File Name: 検索結果テンプレート
  *
  * @package WordPress
  */
@@ -15,27 +15,27 @@
 
 		<?php if ( have_posts() ) : // A. ?>
 
-		<section class="ly_sect__archive ly_sect__archive_header">
-			<h1 class="el_lv2Heading el_lv2Heading__tbBorder">
-				<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'underscores' ), '<span>' . get_search_query() . '</span>' );
-				?>
-			</h1>
-		</section>
+			<section class="ly_sect__archive ly_sect__archive_header">
+				<h1 class="el_lv2Heading el_lv2Heading__tbBorder">
+					<?php
+						/* translators: %s: search query. */
+						printf( esc_html__( 'Search Results for: %s', 'underscores' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1>
+			</section>
 
-		<section class="ly_sect__archive ly_sect__archive_main">
-			<ul class="bl_card_defaultUnit">
-				<?php while ( have_posts() ) : // メインループ. ?>
-					<?php the_post(); ?>
+			<section class="ly_sect__archive ly_sect__archive_main">
+				<ul class="bl_card_defaultUnit">
+					<?php while ( have_posts() ) : // メインループ. ?>
+						<?php the_post(); ?>
 
-					<?php get_template_part( 'template-parts/card/card' ); ?>
+						<?php get_template_part( 'template-parts/card/card' ); // 投稿カード. ?>
 
-				<?php endwhile; // メインループ. ?>
-			</ul>
-			<?php the_posts_navigation(); ?>
+					<?php endwhile; // メインループ. ?>
+				</ul>
+				<?php the_posts_navigation(); ?>
 
-		</section>
+			</section>
 
 		<?php else : // A. ?>
 

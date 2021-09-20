@@ -14,16 +14,16 @@
 /**
  * ------ サムネイル画像（figure > img） -------
  *
- * @param str $read comment.
- * @param str $size comment.
+ * @param str $size 画像サイズ.
+ * @param str $read 投稿ID（空欄で現在の投稿）.
  */
-function img_output_thumb( $read, $size = 'url' ) {
+function img_output_thumb( $size = 'url', $read = '' ) {
 	$object = get_field( 'ad_noImage', 'option' );
 	if ( 'url' === $size ) {
-		$img    = get_the_post_thumbnail_url( $read->ID );
+		$img    = get_the_post_thumbnail_url( $read );
 		$object = $object['url'];
 	} else {
-		$img    = get_the_post_thumbnail_url( $read->ID, $size );
+		$img    = get_the_post_thumbnail_url( $read, $size );
 		$object = $object['sizes'][ $size ];
 	}
 	if ( $img ) {
@@ -41,16 +41,16 @@ function img_output_thumb( $read, $size = 'url' ) {
 /**
  * ------ サムネイル画像（URL） -------
  *
- * @param str $read comment.
- * @param str $size comment.
+ * @param str $size 画像サイズ.
+ * @param str $read 投稿ID（空欄で現在の投稿）.
  */
-function img_output_thumb_url( $read, $size = 'url' ) {
+function img_output_thumb_url( $size = 'url', $read = '' ) {
 	$object = get_field( 'ad_noImage', 'option' );
 	if ( 'url' === $size ) {
-		$img    = get_the_post_thumbnail_url( $read->ID );
+		$img    = get_the_post_thumbnail_url( $read );
 		$object = $object['url'];
 	} else {
-		$img    = get_the_post_thumbnail_url( $read->ID, $size );
+		$img    = get_the_post_thumbnail_url( $read, $size );
 		$object = $object['sizes'][ $size ];
 	}
 	if ( $img ) {
@@ -64,7 +64,7 @@ function img_output_thumb_url( $read, $size = 'url' ) {
 /**
  * ------ ACF画像フィールド（figure > img） -------
  *
- * @param str $title comment.
+ * @param str $title 画像フィールド名.
  * @param str $size comment.
  * @param str $option comment.
  */
@@ -91,9 +91,9 @@ function img_output( $title, $size = 'url', $option = 'option' ) {
 /**
  * ------ ACF画像フィールド（URL） -------
  *
- * @param str $title comment.
- * @param str $size comment.
- * @param str $option comment.
+ * @param str $title 画像フィールド名.
+ * @param str $size 画像サイズ.
+ * @param str $option optionページ指定.
  */
 function img_output_url( $title, $size = 'url', $option = 'option' ) {
 	$img = get_field( $title, $option );
@@ -113,8 +113,8 @@ function img_output_url( $title, $size = 'url', $option = 'option' ) {
 /**
  * ------ ACF画像サブフィールド（figure > img） -------
  *
- * @param str $title comment.
- * @param str $size comment.
+ * @param str $title 画像フィールド名.
+ * @param str $size optionページ指定.
  */
 function img_output_sub( $title, $size = 'url' ) {
 	$img = get_sub_field( $title );
@@ -139,8 +139,8 @@ function img_output_sub( $title, $size = 'url' ) {
 /**
  * ------ ACF画像サブフィールド（URL） -------
  *
- * @param str $title comment.
- * @param str $size comment.
+ * @param str $title 画像フィールド名.
+ * @param str $size 画像サイズ.
  */
 function img_output_sub_url( $title, $size = 'url' ) {
 	$img = get_sub_field( $title );
@@ -160,9 +160,9 @@ function img_output_sub_url( $title, $size = 'url' ) {
 /**
  * ------ ギャラリーフィールドの1枚目（figure > img） -------
  *
- * @param str $title comment.
- * @param str $size comment.
- * @param str $option comment.
+ * @param str $title 画像フィールド名.
+ * @param str $size 画像サイズ.
+ * @param str $option optionページ指定.
  */
 function gallery_first( $title, $size = 'url', $option = 'option' ) {
 	$gallery = get_field( $title, $option );
@@ -189,7 +189,7 @@ function gallery_first( $title, $size = 'url', $option = 'option' ) {
 /**
  * ------ カラム制御と連動してクラスを出力 -------
  *
- * @param str $tmp comment.
+ * @param str $tmp カラム制御用フィールド名.
  */
 function ly_cont__col( $tmp = 'dv_page' ) {
 	if ( get_field( $tmp, 'option' ) ) {
@@ -200,10 +200,11 @@ function ly_cont__col( $tmp = 'dv_page' ) {
 /**
  * ------ カラム制御と連動してサイドバーを出力 -------
  *
- * @param str $tmp comment.
+ * @param str $tmp カラム制御用フィールド名.
+ * @param str $name ファイル名.
  */
-function set_sidebar( $tmp = 'dv_page' ) {
+function set_sidebar( $tmp = 'dv_page', $name = '' ) {
 	if ( get_field( $tmp, 'option' ) ) {
-		get_sidebar();
+		get_sidebar( $name );
 	}
 }

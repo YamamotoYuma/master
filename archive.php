@@ -28,7 +28,7 @@
 				<?php while ( have_posts() ) : // メインループ. ?>
 					<?php the_post(); ?>
 
-					<?php get_template_part( 'template-parts/card/card' ); // ブログカード. ?>
+					<?php get_template_part( 'template-parts/card/card' ); // 投稿カード. ?>
 
 				<?php endwhile; // メインループ. ?>
 			</ul>

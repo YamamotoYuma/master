@@ -1,12 +1,12 @@
 <?php
 /**
- * CTA
+ * CTAテンプレート
  *
  * @package WordPress
  */
 
 ?>
-<section class="ly_sect ly_sect__cta ut_fullWidthPadding" style="background-image:url('<?php img_output_url( 'cta_intro_img' ); ?>');">
+<section class="ly_sect ly_sect__cta" style="background-image:url('<?php img_output_url( 'cta_intro_img' ); ?>');">
 	<div class="ly_sect__cta_inner left">
 		<h2><?php the_field( 'cta_intro_h2', 'option' ); // 大見出し. ?><span><?php the_field( 'cta_intro_h2_rubi', 'option' ); ?></span></h2>
 		<p><?php the_field( 'cta_intro_txt', 'option' ); // 導入文. ?></p>

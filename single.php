@@ -5,45 +5,45 @@
  * @package WordPress
  */
 
+/*
+--------------------------------
+ *  変数定義
+--------------------------------
+*/
+$area = 'sidebar-2'; // ウィジェットエリアの定義（デフォルト：[投稿コンテンツ下]）.
 ?>
+
 <?php get_header(); // ヘッダー読み込み. ?>
-<div class="ly_cont ly_cont__archive
-<?php
-if ( get_field( 'dv_single', 'option' ) ) {
-	echo ' ly_cont__col'; }
-?>
-">
+
+<div class="ly_cont ly_cont__single<?php ly_cont__col( 'dv_single' ); // カラム制御. ?>">
+
 	<main id="primary" class="site-main ly_cont_main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post(); // START：メインループ.
-			?>
+		<?php while ( have_posts() ) : // メインループ. ?>
+			<?php the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content/content', get_post_type() ); // コンテンツエリア読み込み. ?>
+			<?php get_template_part( 'template-parts/content/content', get_post_type() ); // 投稿コンテンツ. ?>
 
-			<?php
-			$area = 'sidebar-2';
-			if ( is_active_sidebar( $area ) ) :
-				?>
+			<?php if ( is_active_sidebar( $area ) ) : // A ウィジェットエリアにウィジェットがあれば. ?>
 
-			<section class="ly_sect__single ly_sect__widget">
-				<?php dynamic_sidebar( $area ); // ウィジェットエリア[投稿コンテンツ下]. ?>
-			</section>
-			<!-- /.ly_sect ly_sect__widget -->
-		<?php endif; ?>
+				<section class="ly_sect__single ly_sect__widget">
 
-			<?php get_template_part( 'template-parts/parts/pager', get_post_type() ); // ページャー読み込み. ?>
+					<?php dynamic_sidebar( $area ); // ウィジェットエリア. ?>
 
-		<?php endwhile; // END：メインループ. ?>
+				</section>
+				<!-- /.ly_sect ly_sect__widget -->
+
+			<?php endif; // A ウィジェットエリアにウィジェットがあれば. ?>
+
+			<?php get_template_part( 'template-parts/parts/pager', get_post_type() ); // ページャー. ?>
+
+		<?php endwhile; // メインループ. ?>
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_single', 'option' ) ) {
-		get_sidebar(); } //サイドバー読み込み
-	?>
+	<?php set_sidebar( 'dv_single' ); // サイドバー. ?>
+
 </div>
 <!--/.ly_cont-->
-<?php
-get_footer();// フッター読み込み.
+
+<?php get_footer(); // フッター. ?>

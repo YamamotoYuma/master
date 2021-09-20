@@ -27,7 +27,7 @@ $terms = get_the_terms( $post->ID, $post_taxonomy_cat ) // .
 <li class="bl_card_default clearfix">
 	<a href="<?php the_permalink(); ?>" class="bl_card_default_layer"></a>
 	<div class="bl_card_default_inner left">
-		<?php img_output_thumb( $page, 'thumbnail' ); ?>
+		<?php img_output_thumb( 'thumbnail' ); ?>
 	</div>
 	<!-- /.bl_card_default_inner.left -->
 	<div class="bl_card_default_inner right">

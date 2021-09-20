@@ -12,8 +12,13 @@
 */
 $page_id = get_post( get_the_ID() );
 $slug    = $page_id->post_name; // ページスラッグを取得.
-?>
 
+/*
+--------------------------------
+ *	DOM生成
+--------------------------------
+*/
+?>
 <?php get_header(); // ヘッダー. ?>
 
 <div class="ly_cont ly_cont__<?php echo esc_attr( $slug ); ?><?php ly_cont__col(); // カラム制御. ?>">
@@ -28,10 +33,7 @@ $slug    = $page_id->post_name; // ページスラッグを取得.
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_page', 'option' ) ) {
-		get_sidebar(); } //サイドバー.
-	?>
+	<?php set_sidebar(); // サイドバー. ?>
 
 </div>
 <!--/.ly_cont-->

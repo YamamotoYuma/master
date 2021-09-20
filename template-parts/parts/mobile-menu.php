@@ -19,7 +19,7 @@ $nav = array(
 ?>
 
 <!--------------------------------
-	トリガーボタン
+	トリガーボタン生成
 --------------------------------->
 <div class="el_menuTrigger_wrapper">
 	<div class="el_menuTrigger js_menuTrigger" href="">
@@ -32,7 +32,7 @@ $nav = array(
 <!-- ./el_menuTrigger_wrapper -->
 
 <!--------------------------------
-	ドロワーエリア
+	ドロワーエリア生成
 --------------------------------->
 <div class="bl_mobileMenu js_mobileMenu">
 	<nav><?php wp_nav_menu( $nav ); // ナビゲーション. ?></nav>

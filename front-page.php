@@ -1,6 +1,6 @@
 <?php
 /**
- *  FileName: フロントページ用ファイル
+ *  FileName: フロントページテンプレート
  *
  * @package WordPress
  */
@@ -12,7 +12,7 @@
 */
 $page_id = get_post( get_the_ID() );
 $slug    = $page_id->post_name; // ページスラッグを取得.
-$args    = array( // サブループのテスト.
+$args    = array( // サブループのテスト用.
 	'type' => 'news',
 	'num'  => 3,
 );
@@ -26,15 +26,17 @@ $args    = array( // サブループのテスト.
 		<?php while ( have_posts() ) : // メインループ. ?>
 			<?php the_post(); ?>
 
-			<?php get_template_part( 'template-parts/sub/sub', '', $args ); // サブループ. ?>
+			<?php get_template_part( 'template-parts/sub/sub', '', $args ); // サブループのテスト. ?>
+
+
+
+
 		<?php endwhile; // メインループ. ?>
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_page', 'option' ) ) {
-		get_sidebar(); } //サイドバー.
-	?>
+	<?php set_sidebar(); // サイドバー. ?>
+
 </div>
 <!--/.ly_cont-->
 

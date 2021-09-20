@@ -1,6 +1,6 @@
 <?php
 /**
- *  サブループ
+ *  FileName: サブループ
  *
  * @package WordPress
  */
@@ -78,28 +78,29 @@ if ( ! empty( $post_terms ) ) {
  *  ループ処理
 --------------------------------
 */
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) :
-	?>
+?>
+<?php $the_query = new WP_Query( $args ); ?>
+<?php if ( $the_query->have_posts() ) : // A. ?>
 
-<ul class="bl_cardPostUnit">
-	<?php
-	while ( $the_query->have_posts() ) :
-		$the_query->the_post(); // 繰り返し処理開始.
-		?>
+	<ul class="bl_cardPostUnit">
 
-		<?php get_template_part( 'template-parts/card/card' ); // ブログカードをインク. ?>
+		<?php while ( $the_query->have_posts() ) : // B. ?>
+			<?php $the_query->the_post(); ?>
 
-	<?php endwhile; // 繰り返し終了. ?>
-</ul>
-<!-- ./ bl_cardPostUnit -->
+			<?php get_template_part( 'template-parts/card/card' ); // 投稿カード. ?>
 
-<?php else : // 条件分岐：投稿が無い場合は. ?>
+		<?php endwhile; // B. ?>
 
-<div class="uq_postNotFound_wrapper">
-	<div class="uq_postNotFound">準備中</div>
-</div>
-<!--./ uq_postNotFound_wrapper -->
+	</ul>
+	<!-- ./ bl_cardPostUnit -->
 
-<?php endif; // 条件分岐終了. ?>
+<?php else : // A. ?>
+
+	<div class="uq_postNotFound_wrapper">
+		<div class="uq_postNotFound">準備中</div>
+	</div>
+	<!--./ uq_postNotFound_wrapper -->
+
+<?php endif; // A. ?>
+
 <?php wp_reset_postdata(); // クエリリセット. ?>

@@ -1,11 +1,12 @@
 <?php
 /**
- *  FileName: 投稿カード関連
+ *  FileName: 投稿カード：関連
  *
  * @package WordPress
  */
 
 ?>
+
 <li class="bl_vertPosts_item">
 	<div class="bl_vertPosts_headr">
 		<time class="ble_vertPosts_date" datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'Y/m/d' ); ?></time>

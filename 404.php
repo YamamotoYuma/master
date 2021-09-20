@@ -1,13 +1,13 @@
 <?php
 /**
- *  Template Name: 404テンプレート
+ *  File Name: 404テンプレート
  *
  * @package WordPress
  */
 
 ?>
 
-<?php get_header(); // ヘッダー読み込み. ?>
+<?php get_header(); // ヘッダー. ?>
 
 <div class="ly_cont ly_cont__404">
 	<main id="primary" class="site-main ly_cont_main">
@@ -28,4 +28,4 @@
 </div>
 <!--/.ly_cont-->
 
-<?php get_footer(); // フッター読み込み. ?>
+<?php get_footer(); // フッター. ?>

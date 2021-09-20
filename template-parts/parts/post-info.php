@@ -1,13 +1,13 @@
 <?php
 /**
- * ページャー
+ *  FileName: 投稿メタデータ
  *
  * @package WordPress
  */
 
 /*
 --------------------------------
-*  投稿メタデータの表示エリア
+*  変数定義
 --------------------------------
 */
 $taxonomy_slug     = array_keys( get_the_taxonomies() ); // 投稿の属するタクソノミーを取得.
@@ -18,8 +18,13 @@ if ( 'relation' === $post_taxonomy_cat ) {
 }
 $taxonomy_tag      = get_taxonomy( $taxonomy_slug[1] );
 $post_taxonomy_tag = $taxonomy_tag->name; // タグタイプ.
-?>
 
+/*
+--------------------------------
+*  DOM生成
+--------------------------------
+*/
+?>
 <?php if ( 'post' === get_post_type() ) : // A. ?>
 <nav class="bl_postInfo">
 	<ul class="bl_postInfo_inner">
@@ -41,7 +46,7 @@ $post_taxonomy_tag = $taxonomy_tag->name; // タグタイプ.
 		<?php if ( $terms && ! is_wp_error( $terms ) ) : // C. ?>
 			<?php $tarm_link = get_term_link( $terms[0]->slug, $post_taxonomy_cat ); ?>
 			<li class="bl_postInfo_item">
-				<a class="el_labelPostInfo el_labelPostInfo__badgeCat" href="<?php echo esc_attr( $tarm_link ); ?>"><?php echo esc_html( $terms[0]->name ); // タームラベルを出力. ?></a>
+				<a class="el_labelPostInfo el_labelPostInfo__badgeCat" href="<?php echo esc_url( $tarm_link ); ?>"><?php echo esc_html( $terms[0]->name ); // タームラベルを出力. ?></a>
 			</li>
 		<?php endif; // C. ?>
 	</ul>
@@ -54,7 +59,7 @@ $post_taxonomy_tag = $taxonomy_tag->name; // タグタイプ.
 			<?php foreach ( $terms as $value ) : // E. ?>
 			<li class="bl_postInfo_item">
 				<?php $tarm_link = get_term_link( $value->slug, $value->taxonomy ); ?>
-				<a class="el_labelPostInfo el_labelPostInfo__badgeTag" href="<?php echo esc_attr( $tarm_link ); ?>"><?php echo esc_html( $value->name ); ?></a>
+				<a class="el_labelPostInfo el_labelPostInfo__badgeTag" href="<?php echo esc_url( $tarm_link ); ?>"><?php echo esc_html( $value->name ); ?></a>
 			</li>
 			<?php endforeach; // E. ?>
 		</ul>

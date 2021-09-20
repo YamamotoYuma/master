@@ -1,53 +1,12 @@
 <?php
 /**
- *
- * RelatedPost 関数,
- * ウィジェット関連ファイル
- *
- * --------------------------------
- * ウィジェットエリア
- * --------------------------------
+ * FileName: 新規ウィジェット生成
  *
  * @package WordPress
  */
 
 /**
- * ------ サイドバー -------
- */
-function underscores_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'underscores' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'underscores' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="el_sideBarTtl">',
-			'after_title'   => '</h2>',
-		)
-	);
-	/*------ 投稿コンテンツ下部 -------*/
-	register_sidebar(
-		array(
-			'name'          => '投稿下部',
-			'id'            => 'sidebar-2',
-			'before_widget' => '<section id="%1$s" class="widgetUC %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="el_underContTtl">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'underscores_widgets_init' );
-
-/**
- * --------------------------------
- * ウィジェット
- * --------------------------------
- */
-
-/**
- * ------ 関連記事 -------
+ * ------ 関連記事ウィジェット -------
  */
 class RelatedPost extends WP_Widget {
 	/** Comment. */
@@ -108,8 +67,9 @@ class RelatedPost extends WP_Widget {
 			'current'  => 'on',
 			'taxonomy' => 'relation',
 		);
-		get_template_part( 'template-parts/sub/sub', 'relation', $args ); // サブループをインクルード.
+		get_template_part( 'template-parts/sub/sub', 'relation', $args ); // サブループ.
 		echo wp_kses_post( $mains['after_widget'] );
 	}
 }
+
 register_widget( 'RelatedPost' );

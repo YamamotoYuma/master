@@ -1,6 +1,6 @@
 <?php
 /**
- *  FileName: フロントページ用ファイル
+ *  FileName: ヘッダーテンプレート
  *
  * @package WordPress
  */
@@ -10,7 +10,6 @@
  *	変数定義
 --------------------------------
 */
-
 $nav = array( // グローバルナビゲーション.
 	'container'      => false,
 	'menu_class'     => 'bl_headerNav',
@@ -36,18 +35,22 @@ $nav = array( // グローバルナビゲーション.
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site ly_siteBody js_siteBody">
+
 	<div class="ly_siteBody_inner js_siteBody_inner">
+
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'underscores' ); ?></a>
 
 		<header id="masthead" class="site-header ly_header">
+
 			<div class="ly_header_inner">
+
 				<div class="bl_headerUtils">
 
-					<?php if ( is_front_page() || is_home() ) : // サイトロゴ：トップページならh1タグに内包. ?>
+					<?php if ( is_front_page() || is_home() ) : // A サイトロゴ：トップページならh1タグに内包. ?>
 						<h1 class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></h1>
-					<?php else : // サイトロゴ：トップページ以外ならdivタグに内包. ?>
+					<?php else : // A サイトロゴ：トップページ以外ならdivタグに内包. ?>
 						<div class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></div>
-					<?php endif; // END：サイトロゴ条件分岐. ?>
+					<?php endif; // A サイトロゴ条件分岐. ?>
 					<a class="el_btn" href="<?php the_field( 'ad_inquiryLink', 'option' ); ?>">お問い合わせ</a>
 
 				</div>
@@ -59,5 +62,7 @@ $nav = array( // グローバルナビゲーション.
 			<!--/.ly_header_inner-->
 		</header>
 		<!--/.ly_header-->
+
 		<?php get_template_part( 'template-parts/parts/sticky-nav' ); // ヘッダー固定ナビ. ?>
-		<?php get_template_part( 'template-parts/parts/bread-crumb' ); // パンくずリスト読み込み. ?>
+
+		<?php get_template_part( 'template-parts/parts/bread-crumb' ); // パンくずリスト. ?>

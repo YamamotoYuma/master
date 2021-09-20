@@ -1,13 +1,14 @@
 <?php
 /**
- *  FileName: Footerページ用ファイル
+ *  FileName: フッターテンプレート
  *
  * @package WordPress
  */
 
 ?>
 
-<footer id="colophon" class="site-footer">
+				<footer id="colophon" class="site-footer">
+
 					<div class="ly_footer_wrapper">
 
 						<div class="ly_footer">
@@ -22,6 +23,7 @@
 							<!-- /.ly_footer_inner -->
 						</div>
 						<!-- /.ly_footer -->
+
 						<div class="ly_footer">
 							<div class="ly_footer_inner">
 								<small class="el_copyright"><?php the_field( 'ad_copyWright', 'option' ); // コピーライト. ?></small>
@@ -32,22 +34,23 @@
 
 					</div>
 					<!-- /.ly_footer_wrapper -->
+
 				</footer>
 
 			</div>
 			<!-- /.ly_siteBody_inner -->
 
-			<?php get_template_part( 'template-parts/parts/mobile-menu' ); // モバイルメニューをインク. ?>
+			<?php get_template_part( 'template-parts/parts/mobile-menu' ); // モバイルメニュー. ?>
 
 			<div class="el_pageTop js_pageTop">
 				<a href="#"></a>
 			</div>
-			<!-- ./bl_pageTop -->
+			<!-- ./el_pageTop ページトップへ戻る -->
 
 		</div>
 		<!-- /.ly_siteBody -->
 
-		<?php wp_footer(); // フッターをインク. ?>
+		<?php wp_footer(); // フッター下エリア. ?>
 
 	</body>
 </html>

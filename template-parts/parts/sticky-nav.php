@@ -1,6 +1,6 @@
 <?php
 /**
- * ヘッダー固定ナビ
+ *  FileName: ヘッダー固定ナビ
  *
  * @package WordPress
  */

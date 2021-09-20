@@ -1,6 +1,6 @@
 <?php
 /**
- *  FileName: コンタクトページ
+ *  Template Name: コンタクトページ
  *
  * @package WordPress
  */
@@ -12,9 +12,13 @@
 */
 $page_id = get_post( get_the_ID() );
 $slug    = $page_id->post_name; // ページスラッグを取得.
-$contact = '[contact-form-7 id="8" html_id="inline-validation-engine"]' // contactform7ショートコード取得.
-?>
 
+/*
+--------------------------------
+ *	DOM生成
+--------------------------------
+*/
+?>
 <?php get_header(); // ヘッダー. ?>
 
 <div class="ly_cont ly_cont__<?php echo esc_attr( $slug ); ?><?php ly_cont__col(); // カラム制御. ?>">
@@ -29,13 +33,9 @@ $contact = '[contact-form-7 id="8" html_id="inline-validation-engine"]' // conta
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_page', 'option' ) ) {
-		get_sidebar(); } //サイドバー.
-	?>
+	<?php set_sidebar(); // サイドバー. ?>
 
 </div>
 <!--/.ly_cont-->
 
-<?php
-get_footer();// フッター.
+<?php get_footer(); // フッター. ?>

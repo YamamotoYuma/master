@@ -37,7 +37,7 @@ if ( $prevpost || $nextpost ) { // 前の記事、次の記事いずれか存在
 				<?php if ( get_the_terms( $prevpost->ID, $post_taxonomy ) === $terms ) : // A-1. ?>
 				<span><?php echo esc_html( $terms[0]->name ); ?></span>
 				<?php endif; // A-1. ?>
-				<?php img_output_thumb( $prevpost, 'medium' ); ?>
+				<?php img_output_thumb( 'medium', $prevpost ); ?>
 			</div>
 			<!-- /.bl_pager_inner -->
 			<div class="bl_pager_inner cont">
@@ -67,7 +67,7 @@ if ( $prevpost || $nextpost ) { // 前の記事、次の記事いずれか存在
 				<?php if ( get_the_terms( $nextpost->ID, $post_taxonomy ) === $terms ) : // A-2. ?>
 				<span><?php echo esc_html( $terms[0]->name ); ?></span>
 				<?php endif; // A-2. ?>
-				<?php img_output_thumb( $nextpost, 'medium' ); ?>
+				<?php img_output_thumb( 'medium', $nextpost ); ?>
 			</div>
 			<!-- /.bl_pager_inner -->
 			<div class="bl_pager_inner cont">

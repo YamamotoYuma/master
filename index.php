@@ -7,7 +7,7 @@
 
 ?>
 
-<?php get_header(); // ヘッダーをインク. ?>
+<?php get_header(); // ヘッダー. ?>
 
 <div class="ly_cont ly_cont__col<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
 
@@ -33,12 +33,9 @@
 		?>
 	</main>
 
-	<?php
-	if ( get_field( 'dv_archive', 'option' ) ) {
-		get_sidebar(); } //サイドバー読み込み
-	?>
+	<?php set_sidebar( 'dv_archive' ); // サイドバー. ?>
 
 </div>
 <!--/.ly_cont-->
 
-<?php get_footer();// フッター読み込み. ?>
+<?php get_footer();// フッター. ?>

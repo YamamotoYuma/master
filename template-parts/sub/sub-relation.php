@@ -1,13 +1,13 @@
 <?php
 /**
- *  サブループ（関連）
+ *  FileName: サブループ（関連）
  *
  * @package WordPress
  */
 
 /*
 --------------------------------
- *	変数定義エリア
+ *	変数定義
 --------------------------------
 */
 
@@ -48,7 +48,7 @@ if ( 'on' === $current ) {
 
 /*
 --------------------------------
- *	クエリ定義エリア
+ *	クエリ定義
 --------------------------------
 */
 $args = array(
@@ -74,27 +74,25 @@ if ( ! empty( $post_terms ) || 'on' === $current ) {
 
 /*
 --------------------------------
- *	ループ処理エリア
+ *	ループ処理
 --------------------------------
 */
 ?>
+<?php $the_query = new WP_Query( $args ); ?>
+<?php if ( $the_query->have_posts() ) : // A. ?>
 
-<?php
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) : // A-1.
-	?>
+	<ul class="bl_postCardUnit bl_postCardUnit__horize">
 
-<ul class="bl_postCardUnit bl_postCardUnit__horize">
-	<?php
-	while ( $the_query->have_posts() ) :
-		$the_query->the_post(); // B-2.
-		?>
+		<?php while ( $the_query->have_posts() ) : // B. ?>
+			<?php $the_query->the_post(); ?>
 
-		<?php get_template_part( 'template-parts/card/card', 'relation' ); // ブログカードをインク. ?>
+			<?php get_template_part( 'template-parts/card/card', 'relation' ); // 投稿カード. ?>
 
-	<?php endwhile; // B-1. ?>
-</ul>
-<!-- ./bl_vertPosts -->
+		<?php endwhile; // B. ?>
 
-<?php endif; // A-1. ?>
+	</ul>
+	<!-- ./bl_vertPosts -->
+
+<?php endif; // A. ?>
+
 <?php wp_reset_postdata(); // クエリリセット. ?>
