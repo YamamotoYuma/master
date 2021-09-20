@@ -1,6 +1,6 @@
 <?php
 /**
- *  FileName: 投稿メタデータ
+ * FileName: 投稿メタデータ
  *
  * @package WordPress
  */
