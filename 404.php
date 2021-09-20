@@ -1,6 +1,6 @@
 <?php
 /**
- *  FileName: 404ページ用ファイル
+ *  Template Name: 404テンプレート
  *
  * @package WordPress
  */
@@ -28,5 +28,4 @@
 </div>
 <!--/.ly_cont-->
 
-<?php
-get_footer(); // フッター読み込み.
+<?php get_footer(); // フッター読み込み. ?>

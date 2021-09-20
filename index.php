@@ -2,19 +2,14 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Underscores
+ * @package WordPress
  */
 
-get_header();
 ?>
-<div class="ly_cont ly_cont__col">
+
+<?php get_header(); // ヘッダーをインク. ?>
+
+<div class="ly_cont ly_cont__col<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
 
 	<main id="primary" class="site-main ly_cont_main">
 				<?php
@@ -38,10 +33,12 @@ get_header();
 		?>
 	</main>
 
-	<?php get_sidebar();// サイドバー読み込み. ?>
+	<?php
+	if ( get_field( 'dv_archive', 'option' ) ) {
+		get_sidebar(); } //サイドバー読み込み
+	?>
 
 </div>
 <!--/.ly_cont-->
 
-<?php
-get_footer();// フッター読み込み.
+<?php get_footer();// フッター読み込み. ?>

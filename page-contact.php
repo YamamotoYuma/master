@@ -5,37 +5,37 @@
  * @package WordPress
  */
 
+/*
+--------------------------------
+ *  変数定義
+--------------------------------
+*/
 $page_id = get_post( get_the_ID() );
 $slug    = $page_id->post_name; // ページスラッグを取得.
 $contact = '[contact-form-7 id="8" html_id="inline-validation-engine"]' // contactform7ショートコード取得.
 ?>
 
-<?php get_header(); // ヘッダー読み込み. ?>
+<?php get_header(); // ヘッダー. ?>
 
-<div class="ly_cont ly_cont__<?php echo esc_attr( $slug ); ?>">
+<div class="ly_cont ly_cont__<?php echo esc_attr( $slug ); ?><?php ly_cont__col(); // カラム制御. ?>">
 	<main id="primary" class="site-main ly_cont_main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
+		<?php while ( have_posts() ) : // メインループ. ?>
+			<?php the_post(); ?>
 
-			<header class="page-header ly_sect_pageHeader">
-				<h1 class="el_lv2Heading el_lv2Heading__tbBorder"><span><?php the_title(); // ページタイトル. ?></span></h1>
-			</header>
+			<?php get_template_part( 'template-parts/content/content', 'contact' ); // 投稿コンテンツ. ?>
 
-			<section class="ly_sect ly_sect__single">
-				<?php echo esc_html( apply_filters( 'the_content', $contact ) ); // contactform7呼び出し. ?>
-			</section>
-			<!-- /.ly_sect ly_sect__single -->
-		<?php endwhile; ?>
+		<?php endwhile; // メインループ. ?>
 
 	</main>
+
 	<?php
-	/** *get_sidebar(); //サイドバー読み込み（コメントアウトで1カラムレイアウトへ; */
+	if ( get_field( 'dv_page', 'option' ) ) {
+		get_sidebar(); } //サイドバー.
 	?>
+
 </div>
 <!--/.ly_cont-->
 
 <?php
-get_footer();// フッター読み込み.
+get_footer();// フッター.

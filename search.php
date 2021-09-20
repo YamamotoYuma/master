@@ -1,21 +1,19 @@
 <?php
 /**
- *  FileName: 検索ページ用ファイル
+ *  Template Name: 検索結果テンプレート
  *
  * @package WordPress
  */
 
 ?>
-<?php get_header(); ?>
-<div class="ly_cont ly_cont__archive
-<?php
-if ( get_field( 'dv_archive', 'option' ) ) {
-	echo ' ly_cont__col'; }
-?>
-">
+
+<?php get_header(); // ヘッダー. ?>
+
+<div class="ly_cont ly_cont__archive<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
+
 	<main id="primary" class="site-main ly_cont_main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : // A. ?>
 
 		<section class="ly_sect__archive ly_sect__archive_header">
 			<h1 class="el_lv2Heading el_lv2Heading__tbBorder">
@@ -28,36 +26,30 @@ if ( get_field( 'dv_archive', 'option' ) ) {
 
 		<section class="ly_sect__archive ly_sect__archive_main">
 			<ul class="bl_card_defaultUnit">
-				<?php
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/card/card' );
-				endwhile;
-				?>
-			</ul>
-			<?php
-			the_posts_navigation();
-			else :
-				get_template_part( 'template-parts/content/content', 'none' );
+				<?php while ( have_posts() ) : // メインループ. ?>
+					<?php the_post(); ?>
 
-			endif;
-			?>
+					<?php get_template_part( 'template-parts/card/card' ); ?>
+
+				<?php endwhile; // メインループ. ?>
+			</ul>
+			<?php the_posts_navigation(); ?>
+
 		</section>
 
-		<?php
-		if ( function_exists( 'responsive_pagination' ) ) {
-			responsive_pagination( $additional_loop->max_num_pages ); } //ページネーション.
-		?>
+		<?php else : // A. ?>
+
+			<?php get_template_part( 'template-parts/content/content', 'none' ); ?>
+
+		<?php endif; // A. ?>
+
+		<?php get_template_part( 'template-parts/parts/pagenation' ); // ページネーション. ?>
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_archive', 'option' ) ) {
-		get_sidebar(); } //サイドバー読み込み.
-	?>
+	<?php set_sidebar( 'dv_archive' ); // サイドバー. ?>
 
 </div>
 <!--/.ly_cont-->
 
-<?php
-get_footer();// フッター読み込み.
+<?php get_footer(); // フッター. ?>

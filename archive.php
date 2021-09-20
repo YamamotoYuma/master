@@ -8,14 +8,10 @@
 
 ?>
 
-<?php get_header(); // ヘッダーをインク. ?>
+<?php get_header(); // ヘッダー. ?>
 
-<div class="ly_cont
-<?php
-if ( get_field( 'dv_archive', 'option' ) ) {
-	echo ' ly_cont__col'; }
-?>
-ly_cont__archive">
+<div class="ly_cont ly_cont__archive<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
+
 	<main id="primary" class="site-main ly_cont_main">
 
 		<section class="ly_sect__archive ly_sect__archive_header">
@@ -29,30 +25,23 @@ ly_cont__archive">
 		<section class="ly_sect__archive ly_sect__archive_main">
 			<?php if ( have_posts() ) : // A. ?>
 			<ul class="bl_card_defaultUnit">
-				<?php
-				while ( have_posts() ) :
-					the_post(); // START：メインループ.
-					?>
-					<?php get_template_part( 'template-parts/card/card' ); // ブログカードをインク. ?>
-				<?php endwhile; // END：メインループ. ?>
+				<?php while ( have_posts() ) : // メインループ. ?>
+					<?php the_post(); ?>
+
+					<?php get_template_part( 'template-parts/card/card' ); // ブログカード. ?>
+
+				<?php endwhile; // メインループ. ?>
 			</ul>
 			<?php endif; // A. ?>
 		</section>
 
-		<?php
-		if ( function_exists( 'responsive_pagination' ) ) {
-			responsive_pagination( $additional_loop->max_num_pages ); } //ページネーション
-		?>
+		<?php get_template_part( 'template-parts/parts/pagenation' ); // ページネーション. ?>
 
 	</main>
 
-	<?php
-	if ( get_field( 'dv_archive', 'option' ) ) {
-		get_sidebar(); } //サイドバー読み込み
-	?>
+	<?php set_sidebar( 'dv_archive' ); // サイドバー. ?>
 
 </div>
 <!--/.ly_cont-->
 
-<?php
-get_footer(); // フッターをインク.
+<?php get_footer(); // フッター. ?>
