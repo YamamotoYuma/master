@@ -1,6 +1,6 @@
 <?php
 /**
- *  コンテンツエリア（汎用）
+ *  サブループ
  *
  * @package WordPress
  */
@@ -11,9 +11,9 @@
 --------------------------------
 */
 if ( $args['type'] ) {
-	$post_type = $args['type'];
+	$post_type_is = $args['type'];
 } else {
-	$post_type = 'post';}
+	$post_type_is = 'post';}
 if ( $args['num'] ) {
 	$post_per_page = $args['num'];
 } else {
@@ -34,12 +34,12 @@ if ( $args['current'] ) {
 /*------ 関連記事を選別 -------*/
 $current_term = get_the_terms( $post->ID, $post_taxonomy );
 if ( $current_term && ! is_wp_error( $current_term ) ) {
-	$term = $current_term[0];
-	if ( $term->parent ) { // 子.
-		$parent_term = get_term( $term->parent, $post_taxonomy );
+	$value = $current_term[0];
+	if ( $value->parent ) { // 子.
+		$parent_term = get_term( $value->parent, $post_taxonomy );
 		$term_slug   = esc_html( $parent_term->slug );
 	} else { // 親.
-		$term_slug = esc_html( $term->slug );
+		$term_slug = esc_html( $value->slug );
 	}
 }
 if ( 'on' === $current ) {
@@ -51,7 +51,7 @@ if ( 'on' === $current ) {
 --------------------------------
 */
 $args = array(
-	'post_type'           => $postType,
+	'post_type'           => $post_type_is,
 	'posts_per_page'      => $post_per_page,
 	'post__not_in'        => array( get_the_ID() ),
 	'paged'               => get_query_var( 'paged' ),

@@ -84,7 +84,7 @@ class RelatedPost extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance          = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['limit'] = is_numeric( $new_instance['limit'] ) ? $new_instance['limit'] : 6;
 		return $instance;
 	}
@@ -92,25 +92,24 @@ class RelatedPost extends WP_Widget {
 	/**
 	 * Comment
 	 *
-	 * @param str $args comment.
+	 * @param str $mains comment.
 	 * @param str $instance comment.
 	 */
-	public function widget( $args, $instance ) {
-		extract( $args );
+	public function widget( $mains, $instance ) {
 		if ( '' !== $instance['title'] ) {
 			$title = apply_filters( 'widget_title', $instance['title'] );
 		}
-		echo esc_html( $before_widget );
+		echo wp_kses_post( $mains['before_widget'] );
 		if ( $title ) {
-			echo esc_html( $before_title . $title . $after_title );
+			echo wp_kses_post( $mains['before_title'] . $title . $mains['after_title'] );
 		}
 		$args = array(
 			'num'      => $instance['limit'],
 			'current'  => 'on',
 			'taxonomy' => 'relation',
 		);
-		get_template_part( 'template-parts/sub', 'relation', $args ); // サブループをインクルード.
-		echo esc_html( $after_widget );
+		get_template_part( 'template-parts/sub/sub', 'relation', $args ); // サブループをインクルード.
+		echo wp_kses_post( $mains['after_widget'] );
 	}
 }
 register_widget( 'RelatedPost' );

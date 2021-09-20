@@ -33,8 +33,8 @@ function my_styles() {
 	 * 必要であれば使用
 	 * wp_enqueue_style('swiper-style','https://unpkg.com/swiper/swiper-bundle.min.css'); //CDN：swiper.css.
 	 */
-	wp_enqueue_style( 'fontAwesome-style', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' ); // CDN：fontAwesome.
-	wp_enqueue_style( 'validationEngine.jquery.css', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css' ); // CDN：validationEngine.jquery.css.
+	wp_enqueue_style( 'fontAwesome-style', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css', '', '1.0.0' ); // CDN：fontAwesome.
+	wp_enqueue_style( 'validationEngine.jquery.css', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css', '', '1.0.0' ); // CDN：validationEngine.jquery.css.
 	wp_enqueue_style( 'main-style', get_theme_file_uri( '/css/main.css' ), array(), gmdate( 'YmdHi' ) ); // SASSコンパイル後のCSSファイル.
 }
 add_action( 'wp_enqueue_scripts', 'my_styles' );
@@ -51,7 +51,7 @@ function my_script() {
 	 */
 	wp_enqueue_script( 'validationEngine-ja.js-js', get_theme_file_uri( '/js/jquery.validationEngine-ja.js' ), '', '1.0.0', true ); // CDN：validationEngine-ja.js.
 	wp_enqueue_script( 'validationEngine-js', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js', '', '1.0.0', true ); // CDN：validationEngine.js.
-	wp_enqueue_script( 'common-js', get_theme_file_uri( '/js/common.js' ), array(), date( 'YmdHi' ), true );// common.js.
+	wp_enqueue_script( 'common-js', get_theme_file_uri( '/js/common.js' ), array(), gmdate( 'YmdHi' ), true );// common.js.
 }
 add_action( 'wp_enqueue_scripts', 'my_script' );
 
@@ -63,7 +63,7 @@ add_action( 'wp_enqueue_scripts', 'my_script' );
 function load_js() {
 	if ( ! is_admin() ) {
 		wp_deregister_script( 'jquery' );
-		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' );
+		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', '', '1.0.0' );
 	}
 }
 add_action( 'wp_print_scripts', 'load_js' );
