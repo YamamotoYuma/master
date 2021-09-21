@@ -17,24 +17,22 @@
 //--------------------------------
 //  全幅セクション（1カラムレイアウトのみ適用可）
 //  @parm padding 左右のコンテンツエリアパディングを取る場合はpを入力
-//                null => コンテンツエリアパディングなし
-//                p => コンテンツエリアパディングあり
+//                null  => コンテンツエリアパディングなし
+//                both  => コンテンツエリアパディングあり
+//                right => 右側のみコンテンツエリアパディングあり
+//                left  => 左側のみコンテンツエリアパディングあり
 //--------------------------------
 @mixin contentAreaFullWidth($padding:'') {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    @if $padding == p {
+    @if $padding == both {
         padding-left: calc(50vw - 50%);
         padding-right: calc(50vw - 50%);
+    } @else if $padding == right{
+        padding-right: calc(50vw - 50%);
+    } @else if $padding == left {
+        padding-left: calc(50vw - 50%);
     }
-}
-
-//------ コンテンツ幅パディング有り -------//
-@mixin contentAreaFullWidthPadding {
-    padding-left: calc(50vw - 50%);
-    padding-right: calc(50vw - 50%);
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
 }
 
 //--------------------------------

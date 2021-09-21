@@ -191,9 +191,9 @@ function add_custom_logo_url() {
  * @param 型 $post_type comment.
  */
 function post_has_archive( $args, $post_type ) {
-	if ( 'post' == $post_type ) {
+	if ( 'post' === $post_type ) {
 		$args['rewrite']     = true;
-		$args['has_archive'] = 'post'; // 該当固定ページスラッグ.
+		$args['has_archive'] = 'post'; // 該当固定ページスラッグ（任意の値に変更可能）.
 	}
 	return $args;
 }

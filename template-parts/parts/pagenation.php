@@ -23,13 +23,11 @@ if ( empty( $pgd ) ) {
 // ページ情報の取得.
 if ( null === $pgs ) {
 	global $wp_query; // ※グローバル宣言.
-	$pgs = $wp_query->max_num_pages;
+	$pgs = (int) $wp_query->max_num_pages; // float型（浮動小数点数）からinteger型（整数）へ変換.
 	if ( ! $pgs ) {
 		$pgs = 1;
 	}
 }
-
-$pgs = (int) $pgs; // float型（浮動小数点数）からinteger型（整数）へ変換.
 
 /*
 --------------------------------

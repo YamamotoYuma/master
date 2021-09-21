@@ -63,7 +63,7 @@ add_action( 'wp_enqueue_scripts', 'my_script' );
 function load_js() {
 	if ( ! is_admin() ) {
 		wp_deregister_script( 'jquery' );
-		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', '', '1.0.0' );
+		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', '', '1.0.0', false );
 	}
 }
 add_action( 'wp_print_scripts', 'load_js' );
