@@ -72,6 +72,23 @@
     }
 }
 
+//------ レイアウト別非表示 -------//
+@include media(lg) {
+    .md {display:none!important;}
+    .sm {display:none!important;}
+    .smmd {display:none!important;}
+}
+@include media(md) {
+    .lg {display:none!important;}
+    .sm {display:none!important;}
+}
+@include media(sm) {
+    .lg {display:none!important;}
+    .md {display:none!important;}
+    .mdlg {display:none!important;}
+}
+
+
 //--------------------------------
 //  Font Awesome 5 （アイコンフォントのスタイル）
 //--------------------------------
@@ -176,12 +193,12 @@
 @mixin half($gap:'60') {
     $halfgap : $gap/2;
     display: flex;
-    margin: 0 percentage($halfgap / $content_width_calc) * -1;
+    margin: 0 percentage( $halfgap / $content_width_calc ) * -1;
     @include media(sm) {
         display: block;
     }
     > * {
         flex: 1;
-        margin: 0 percentage($halfgap / $content_width_calc);
+        margin: 0 percentage($halfgap / ( $content_width_calc + $gap ));
     }
 }
