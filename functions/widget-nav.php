@@ -9,7 +9,7 @@
  * ------ ウィジェットエリアを定義 -------
  */
 function underscores_widgets_init() {
-	register_sidebar( // デフォルト.
+	register_sidebar( // サイドバー.
 		array(
 			'name'          => esc_html__( 'Sidebar', 'underscores' ),
 			'id'            => 'sidebar-1',
