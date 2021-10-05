@@ -47,7 +47,7 @@ require get_stylesheet_directory() . '/functions/option.php';
 
 /*
 --------------------------------
-*  widgetの追加
+*  ウィジェットブロックの追加
 --------------------------------
 */
 require get_stylesheet_directory() . '/widget/class-relatedpost.php';
