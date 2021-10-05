@@ -1,5 +1,5 @@
 //--------------------------------
-//  レイアウト別非表示
+//  デバイス別 表示/非表示
 //--------------------------------
 @include media(lg) {
     .md {display:none!important;}
@@ -14,4 +14,48 @@
     .lg {display:none!important;}
     .md {display:none!important;}
     .mdlg {display:none!important;}
+}
+
+//--------------------------------
+//  アラインメント
+//--------------------------------
+//------ 横位置 -------//
+.hp_tc {text-align: center;}
+.hp_tl {text-align: left;}
+.hp_tr {text-align: right;}
+.hp_tj {text-align: justify;}
+.hp_tll {text-align-last: left;}
+
+//------ 縦位置 -------//
+.hp_vt {vertical-align: top;}
+.hp_vm {vertical-align: middle;}
+.hp_vb {vertical-align: bottom;}
+
+//--------------------------------
+//  文字装飾（coution marker等追加予定）
+//--------------------------------
+//------ テキストサイズ（大） -------//
+.large {font-size: 1.2em!important;}
+
+//------ テキストサイズ（小） -------//
+.small {font-size: .8em!important;}
+
+//------ 強調 -------//
+strong {
+	font-size: 1.125em!important;
+	font-weight: bold!important;
+}
+
+//--------------------------------
+//  フロート・クリアフィックス
+//--------------------------------
+//------ フロート -------//
+.hp_floatL {float: left;}
+.hp_floatR {float: right;}
+
+//------ クリアフィックス -------//
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
 }

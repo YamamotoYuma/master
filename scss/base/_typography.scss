@@ -1,10 +1,11 @@
 /*--------------------------------
-    デフォルトフォントサイズ
+    デフォルトフォントサイズ、ウェイト、行間
 --------------------------------*/
 /*------ 見出し -------*/
 h1 {
     @include fontSize(28);
     font-weight: bold;
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(22);
     }
@@ -13,6 +14,7 @@ h1 {
 h2 {
     @include fontSize(24);
     font-weight: bold;
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(22);
     }
@@ -21,6 +23,7 @@ h2 {
 h3 {
     @include fontSize(20);
     font-weight: bold;
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(18);
     }
@@ -29,6 +32,7 @@ h3 {
 h4 {
     @include fontSize(16);
     font-weight: bold;
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(16);
     }
@@ -36,13 +40,15 @@ h4 {
 
 h5 {
     @include fontSize(16);
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(16);
     }
 }
 
 h6 {
-    @include fontSize(16);
+	@include fontSize(16);
+	line-height: 1.5;
     @include media(sm) {
         @include fontSize(16);
     }
@@ -51,7 +57,8 @@ h6 {
 /*------ 段落 -------*/
 p {
     @include fontSize(16);
+	line-height: 1.75;
     @include media(sm) {
-        @include fontSize(16);
+        @include fontSize(14);
     }
 }

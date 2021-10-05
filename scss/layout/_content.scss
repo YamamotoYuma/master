@@ -18,35 +18,35 @@
     コンテンツエリア
 --------------------------------*/
 /*------ 1カラム -------*/
-.ly_cont { //基本コンテンツエリア
+.ly_cont {
     @include contentArea;
     width: 100%;
     flex: 1;
 }
 
 .ly_cont_main {
-    & > *:first-child{
+    > *:first-child{
         margin-top: 0;
     }
 }
 
 /*------ 2カラム -------*/
-.ly_cont.ly_cont__col { //2カラムレイアウト
+.ly_cont.ly_cont__col {
     display: flex;
     justify-content: space-between;
     @include media(sm){
         flex-direction: column;
     }
-    & > *:last-child {
+    > *:last-child {
         margin-bottom: 0;
     }
-    & .ly_cont_main { //メインバー
+    .ly_cont_main { // メインバー.
         flex: 1;
         @include media(sm){
             margin-bottom: 50px;
         }
     }
-    & .ly_cont_side { //サイドバー
+    .ly_cont_side { // サイドバー.
         flex: 0 0 260px;
         margin-left: (40 / $content_width_calc) * 100%;
         @include media(sm){
@@ -56,7 +56,7 @@
 }
 
 /*--------------------------------
-    特定スラッグ、テンプレート用上下パディング
+    特定テンプレート用上下パディング
 --------------------------------*/
 .ly_cont.ly_cont__single,
 .ly_cont.ly_cont__archive,
