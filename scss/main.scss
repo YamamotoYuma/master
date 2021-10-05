@@ -44,10 +44,12 @@
 @import "helper/spacing/padding";
 /******フロート******/
 @import "helper/float";
-/******テキスト******/
-@import "helper/text";
-/******バーティカル******/
-@import "helper/vertical";
+/******位置******/
+@import "helper/alignment";
+/******文字装飾******/
+@import "helper/decoration";
+/******ユーティリティ******/
+@import "helper/utility";
 
 /*モジュールグループ：エレメント
 ======================================*/

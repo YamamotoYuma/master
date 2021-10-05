@@ -1,0 +1,17 @@
+//--------------------------------
+//  レイアウト別非表示
+//--------------------------------
+@include media(lg) {
+    .md {display:none!important;}
+    .sm {display:none!important;}
+    .smmd {display:none!important;}
+}
+@include media(md) {
+    .lg {display:none!important;}
+    .sm {display:none!important;}
+}
+@include media(sm) {
+    .lg {display:none!important;}
+    .md {display:none!important;}
+    .mdlg {display:none!important;}
+}

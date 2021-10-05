@@ -1,6 +1,6 @@
 <?php
 /**
- * ウィジェット・ナビゲーション関連
+ * ウィジェットエリア・ナビゲーションエリアを定義
  *
  * @package WordPress
  */
@@ -9,7 +9,7 @@
  * ------ ウィジェットエリアを定義 -------
  */
 function underscores_widgets_init() {
-	register_sidebar( // デフォルトサイドバー.
+	register_sidebar( // デフォルト.
 		array(
 			'name'          => esc_html__( 'Sidebar', 'underscores' ),
 			'id'            => 'sidebar-1',
@@ -34,10 +34,10 @@ function underscores_widgets_init() {
 add_action( 'widgets_init', 'underscores_widgets_init' );
 
 /**
- * ------ ナビメニューを定義 -------
+ * ------ ナビメニューエリアを定義 -------
  */
 function register_my_menu() {
-	register_nav_menu( 'main-menu', 'Main Menu' );
-	register_nav_menu( 'sub-menu', 'Sub Menu' );
+	register_nav_menu( 'main-menu', 'Main Menu' ); // デフォルト.
+	register_nav_menu( 'sub-menu', 'Sub Menu' ); // サブ.
 }
 add_action( 'after_setup_theme', 'register_my_menu' );

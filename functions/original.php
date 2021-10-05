@@ -16,8 +16,9 @@
  *
  * @param str $size 画像サイズ.
  * @param str $read 投稿ID（空欄で現在の投稿）.
+ * @param str $cls 固有クラス名の指定.
  */
-function img_output_thumb( $size = 'url', $read = '' ) {
+function img_output_thumb( $size = 'url', $read = '', $cls = '' ) {
 	$object = get_field( 'ad_noImage', 'option' );
 	if ( 'url' === $size ) {
 		$img    = get_the_post_thumbnail_url( $read );
@@ -32,7 +33,7 @@ function img_output_thumb( $size = 'url', $read = '' ) {
 		$url = $object;
 	}
 	?>
-<figure>
+<figure class="el_acf_img<?php echo esc_attr( $cls ); ?>">
 	<img src="<?php echo esc_url( $url ); ?>" alt="サムネイル">
 </figure>
 	<?php
@@ -66,9 +67,10 @@ function img_output_thumb_url( $size = 'url', $read = '' ) {
  *
  * @param str $title 画像フィールド名.
  * @param str $size comment.
+ * @param str $cls 固有クラス名の指定.
  * @param str $option comment.
  */
-function img_output( $title, $size = 'url', $option = 'option' ) {
+function img_output( $title, $size = 'url', $cls = '', $option = 'option' ) {
 	$img = get_field( $title, $option );
 	if ( $img ) {
 		$object = $img;
@@ -82,7 +84,7 @@ function img_output( $title, $size = 'url', $option = 'option' ) {
 	}
 	$alt = $object['alt'];
 	?>
-<figure>
+<figure class="el_acf_img<?php echo esc_attr( $cls ); ?>">
 	<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>">
 </figure>
 	<?php
@@ -114,9 +116,10 @@ function img_output_url( $title, $size = 'url', $option = 'option' ) {
  * ------ ACF画像サブフィールド（figure > img） -------
  *
  * @param str $title 画像フィールド名.
- * @param str $size optionページ指定.
+ * @param str $size 画像サイズ.
+ * @param str $cls 固有クラス名の指定.
  */
-function img_output_sub( $title, $size = 'url' ) {
+function img_output_sub( $title, $size = 'url', $cls = '' ) {
 	$img = get_sub_field( $title );
 	if ( $img ) {
 		$object = $img;

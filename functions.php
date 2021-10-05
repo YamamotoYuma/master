@@ -7,12 +7,9 @@
 
 /*
 --------------------------------
-*  incフォルダ インクルード
+*  スターターテーマ「Underscores」の標準機能関連ファイル
 --------------------------------
 */
-/*------ カスタムヘッダー -------*/
-require get_template_directory() . '/inc/custom-header.php';
-
 /*------ Underscoresオリジナルテンプレートタグ -------*/
 require get_template_directory() . '/inc/template-tags.php';
 
@@ -22,34 +19,35 @@ require get_template_directory() . '/inc/template-functions.php';
 /*------ カスタマイザー機能開放 -------*/
 require get_template_directory() . '/inc/customizer.php';
 
-/*------ Jetpack 互換ファイル -------*/
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
 /*
 --------------------------------
-*  functionsフォルダ インクルード
+*  機能関連のファイル
 --------------------------------
 */
 /*------ ウィジェット、ナビゲーション関連 -------*/
-require get_stylesheet_directory() . '/functions/widget-and-navi.php';
-require get_stylesheet_directory() . '/functions/class-relatedpost.php';
+require get_stylesheet_directory() . '/functions/widget-nav.php';
 
 /*------ Advanced Custom Field オプションページ関連 -------*/
-require get_stylesheet_directory() . '/functions/acf-option-page.php';
+require get_stylesheet_directory() . '/functions/acf.php';
 
 /*------ カスタム投稿タイプ、カスタムタクソノミー -------*/
-require get_stylesheet_directory() . '/functions/costom-post-type.php';
+require get_stylesheet_directory() . '/functions/post-type.php';
 
 /*------ スタイルシート、スクリプトインクルード -------*/
-require get_stylesheet_directory() . '/functions/include-style-and-script.php';
+require get_stylesheet_directory() . '/functions/enqueue.php';
 
 /*------ ショートコード作成 -------*/
 require get_stylesheet_directory() . '/functions/short-code.php';
 
 /*------ ユーザー定義関数 -------*/
-require get_stylesheet_directory() . '/functions/user-defined.php';
+require get_stylesheet_directory() . '/functions/original.php';
 
 /*------ その他のオプション定義 -------*/
-require get_stylesheet_directory() . '/functions/other-option.php';
+require get_stylesheet_directory() . '/functions/option.php';
+
+/*
+--------------------------------
+*  widgetの追加
+--------------------------------
+*/
+require get_stylesheet_directory() . '/widget/class-relatedpost.php';
