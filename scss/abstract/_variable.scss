@@ -6,38 +6,56 @@ $root_em: 100;
 //--------------------------------
 //  フォントファミリー
 //--------------------------------
-$base_fontFamily: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif; //ゴシック体
-$sub_fontFamily: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; //明朝体
+//------ ゴシック体 -------//
+$base_fontFamily: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+
+//------ 明朝体 -------//
+$sub_fontFamily: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 
 //--------------------------------
-//  ベースフォントカラー
+//  フォントカラー
 //--------------------------------
+//------ デフォルトテキスト -------//
 $base_fontColor: #333;
-//------ リンク -------//
+
+//------ リンクテキスト -------//
 $anchor_fontColor: #0069ff;
-//------ フッター -------//
+
+//------ フッターテキスト -------//
 $footer_fontColor: #fff;
-//------ ヘッダー -------//
+
+//------ ヘッダーテキスト -------//
 $header_fontColor: #fff;
 
 //--------------------------------
 //  テーマカラー
 //--------------------------------
+//------ ベースカラー -------//
 $theme_color: #074750;
+
+//------ アクセントカラー -------//
 $accent_color:  #92C130;
+
+//------ サブカラー -------//
 $sub_color:  #074750;
-$second_color:  #EDF5F5;
-$layer_color: #fff;
 
+$second_color:  #EDF5F5; //削除予定
+$layer_color: #fff; //削除予定
+
+//--------------------------------
+//  ユーティリティーカラー
+//--------------------------------
 //------ ボーダー -------//
-$base_borderColor: #DDD;
+$base_borderColor: #DDD; //削除予定
 $theme_borderColor: #DCE8E3;
-
-//------ フッター背景 -------//
-$footer_background: #3C6668;
-
 //------ wysiwygユーティリティ -------//
 $content_uCoror: #ddd;
+
+//--------------------------------
+//  エリアカラー
+//--------------------------------
+//------ フッター背景 -------//
+$footer_background: #3C6668;
 
 //------ ドロワーメニューエリア -------//
 $mobileMenu_bg: #fff; //エリア内背景色
@@ -47,18 +65,29 @@ $mobileMenu_bc: #ccc; //エリア内線色
 //--------------------------------
 //  ブレイクポイント
 //--------------------------------
-$breakpoint_small: 767px;//モバイル
-$breakpoint_medium: 1020px;//タブレット
+//------ モバイル -------//
+$breakpoint_small: 767px;
+
+//------ タブレット -------//
+$breakpoint_medium: 1020px;
 
 //--------------------------------
 //  コンテンツ幅、ガター
 //--------------------------------
-$content_width_calc: 1200; //コンテンツ幅（数値）
-$content_width: $content_width_calc * 1px; //コンテンツ幅（px）
-$content_gutter: 15px; //コンテンツエリア左右ガター
+//------ コンテンツ幅（数値） -------//
+$content_width_calc: 1200;
+
+//------ コンテンツ幅（px） -------//
+$content_width: $content_width_calc * 1px;
+
+//------ コンテンツエリア左右ガター -------//
+$content_gutter: 15px;
 
 //--------------------------------
 //  コンテンツ上下パディング
 //--------------------------------
-$containerPadding: 60px;
-$containerPadding_sm: 50px;
+//------ デスクトップ・タブレット -------//
+$containerPadding: 120px;
+
+//------ モバイル -------//
+$containerPadding_sm: 60px;

@@ -322,8 +322,8 @@ a {
 }
 @media screen and (max-width: 767px) {
   .ly_cont.ly_cont__single, .ly_cont.ly_cont__archive, .ly_cont.ly_cont__404, .ly_cont.ly_cont__contact, .ly_cont.ly_cont__privacy-policy {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
   }
 }
 /******サイドバー******/
@@ -413,8 +413,8 @@ a {
 }
 @media screen and (max-width: 767px) {
   .ly_sect__contact {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
   }
 }
 /*ヘルパーグループ
@@ -1088,19 +1088,19 @@ a {
   margin-bottom: 2.5em !important;
 }
 .hp_containerPT {
-  padding-top: 60px !important;
+  padding-top: 120px !important;
 }
 @media screen and (max-width: 767px) {
   .hp_containerPT {
-    padding-top: 50px !important;
+    padding-top: 60px !important;
   }
 }
 .hp_containerPB {
-  padding-bottom: 60px !important;
+  padding-bottom: 120px !important;
 }
 @media screen and (max-width: 767px) {
   .hp_containerPB {
-    padding-bottom: 50px !important;
+    padding-bottom: 60px !important;
   }
 }
 @media screen and (min-width: 1021px) {

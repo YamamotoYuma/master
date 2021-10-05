@@ -44,7 +44,7 @@ function set_sidebar( $tmp = 'dv_page', $name = '' ) {
  * ------ サムネイル画像（figure > img） -------
  *
  * @param str $size 画像サイズ ※省略化（オリジナルサイズ）.
- * @param str $read 投稿ID ※省略化（現在の投稿）.
+ * @param int $read 投稿ID ※省略化（現在の投稿）.
  * @param str $cls 固有クラス名の指定 ※省略化（.el_acf_img）.
  */
 function img_output_thumb( $size = 'url', $read = '', $cls = '' ) {
@@ -72,7 +72,7 @@ function img_output_thumb( $size = 'url', $read = '', $cls = '' ) {
  * ------ サムネイル画像（URL） -------
  *
  * @param str $size 画像サイズ ※省略化（オリジナルサイズ）.
- * @param str $read 投稿ID ※省略化（現在の投稿）.
+ * @param int $read 投稿ID ※省略化（現在の投稿）.
  */
 function img_output_thumb_url( $size = 'url', $read = '' ) {
 	$object = get_field( 'ad_noImage', 'option' );

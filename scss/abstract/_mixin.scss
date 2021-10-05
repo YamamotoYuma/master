@@ -1,5 +1,5 @@
 //--------------------------------
-//  コンテンツエリア定義（コンテンツ幅は[variable.scss]にて定義）
+//  コンテンツエリア幅の定義（コンテンツ幅は[variable.scss]にて定義）
 //--------------------------------
 @mixin contentArea {
     width: 100%;
@@ -15,8 +15,8 @@
 }
 
 //--------------------------------
-//  全幅セクション（1カラムレイアウトのみ適用可）
-//  @parm padding 左右のコンテンツエリアパディングを取る場合はpを入力
+//  全幅セクション（ly_contが1カラムレイアウトの場合み適用可）
+//  @param str padding 左右のコンテンツエリアパディングを取る場合はpを入力
 //                null  => コンテンツエリアパディングなし
 //                both  => コンテンツエリアパディングあり
 //                right => 右側のみコンテンツエリアパディングあり
@@ -37,7 +37,7 @@
 
 //--------------------------------
 //  メディアクエリ制御（ブレイクポイントは[variable.scss]にて定義）
-//  @param size 適用デバイスの指定
+//  @param str size 適用デバイスの指定
 //              sm => モバイル
 //              md => タブレット
 //              lg => デスクトップ
@@ -75,24 +75,24 @@
 //--------------------------------
 //  Font Awesome 5 （アイコンフォントのスタイル）
 //--------------------------------
-@mixin fas { //Font Awesome 5 Free Solid
+@mixin fas { // Font Awesome 5 Free Solid.
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
 }
 
-@mixin far { //Font Awesome 5 Free Regular
+@mixin far { // Font Awesome 5 Free Regular.
     font-family: 'Font Awesome 5 Free';
     font-weight: 400;
 }
 
-@mixin fab { //Font Awesome 5 Free Brands
+@mixin fab { // Font Awesome 5 Free Brands.
     font-family: 'Font Awesome 5 Brands';
     font-weight: 400;
 }
 
 //--------------------------------
 //  フォントサイズの単位をremに変換
-//  @parm size px単位のフォントサイズを指定
+//  @param int size px単位のフォントサイズを指定
 //--------------------------------
 @mixin fontSize($size : (.16 * $root_em)) {
     font-size: ($size/(.16 * $root_em)) * 1rem;
@@ -100,7 +100,7 @@
 
 //--------------------------------
 //  webフォントの指定（別途読み込みの必要あり）
-//  @parm weight ウェイト指定
+//  @param int weight ウェイト指定
 //--------------------------------
 // @mixin din2014 ($weight :600) { //webフォント：din2014
 //     font-family: din-2014, sans-serif!important;
@@ -109,14 +109,14 @@
 // }
 
 //--------------------------------
-//  モバイルセクションパディング
-//  @param area t => セクションのエリアを指定（上下のパディング値を変動する）
-//              t => 上部セクション  （下パディング半分）
-//              b => 下部          （上パディング半分）
-//              o => 単独          （上下パディング半分）
-//              null => 中間
+//  モバイルセクション間パディング
+//  @param str area セクションのエリアを指定（上下のパディング値を変動する）
+//              	t => 上部セクション	（下パディング半分）
+//              	b => 下部	（上パディング半分）
+//              	o => 単独	（上下パディング半分）
+//              	null => 中間	（上下パディングフル）
 //--------------------------------
-@mixin smSectPadding($area:'') { //[引数]$area= t：上部、$area= b：下部、$area= o：単独、引数なし：中間
+@mixin smSectPadding($area:'') {
     $top: 2;
     $bottom: 2;
     @if $area == t {
@@ -130,14 +130,14 @@
         $bottom: 1;
     }
     @include media(sm) {
-        padding-top: (50px / $top)!important;
-        padding-bottom: (50px / $bottom)!important;
+        padding-top: (60px / $top)!important;
+        padding-bottom: (60px / $bottom)!important;
     }
 }
 
 //--------------------------------
 //  フルードイメージ
-//  @param height 横幅に対する高さの割合を％で指定（単位省略）
+//  @param float height 横幅に対する高さの割合を％で指定（単位省略）
 //--------------------------------
 @mixin fluid ($height:'62.5') { //[引数]横幅に対する高さの比率
     position: relative;
@@ -170,18 +170,25 @@
 }
 
 //--------------------------------
-//  ハーフレイアウトメディアボックス
-//  @parm gap カラム間の隙間
+//  ハーフレイアウトメディアボックス（親要素の幅＝コンテンツ幅 専用）
+//  @param int colgap カラム間の隙間(px)
+//  @param int rowgap カラム落ち後の縦の隙間(px)（モバイルのみ）
 //--------------------------------
-@mixin half($gap:'60') {
-    $halfgap : $gap/2;
+@mixin half($colgap:'60', $rowgap:'25') {
+    $halfgap : $colgap/2;
     display: flex;
-    margin: 0 percentage( $halfgap / $content_width_calc ) * -1;
+    margin: 0 percentage($halfgap / $content_width_calc) * -1;
     @include media(sm) {
         display: block;
     }
     > * {
         flex: 1;
-        margin: 0 percentage($halfgap / ( $content_width_calc + $gap ));
+        margin: 0 percentage($halfgap / $content_width_calc);
+        &:first-child {
+            @content;
+            @include media(sm) {
+                margin-bottom: $rowgap * 1px;
+            }
+        }
     }
 }
