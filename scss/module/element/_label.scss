@@ -41,17 +41,18 @@ a.el_label {
 }
 
 /*------ フォームラベル：必須・任意 -------*/
-.bl_inquiry .el_label{
+.el_label.el_label__need,
+.el_label.el_label__any {
     @include fontSize(12);
-    padding: .1em 1.25em;
+	line-height: 1;
     margin-right: 1em;
-    margin-bottom: .25em;
+    margin-bottom: .5em;
 }
 
-.el_label.el_label__need{ //必須
+.el_label.el_label__need{ // 必須.
     background-color: #CC3F00;
 }
 
-.el_label.el_label__any { //任意
+.el_label.el_label__any { // 任意.
     background-color: #8CC0FC;
 }

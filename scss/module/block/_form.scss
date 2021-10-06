@@ -1,48 +1,48 @@
 /*--------------------------------
     フォーム基本スタイル
 --------------------------------*/
-.bl_inquiry{
-    input,
-    select,
-    textarea { //入力エリア
-        background-color: #fff;
-        border-radius: 0;
-    }
-    th {
-        width: 25%;
-        font-weight: bold;
-        @include fontSize(14);
-        text-align: left;
-        vertical-align: top;
-        padding-right: .5em;
-        padding-bottom: .5em;
-    }
-    td {
-        padding-bottom: 2em;
-        > span {
-            display: block;
-            * {
-                margin-left: 0;
-            }
-            input:not([type = "checkbox"]):not([type = "radio"]),
-            textarea {
-                width: 100%;
-                padding-top: 7px;
-                padding-bottom: 7px;
-            }
-        }
-    }
-    th,
-    td {
-        @include media(sm) {
-            width: 100%;
-            display: block;
-        }
-    }
-    .ajax-loader {
-        display: none!important;
-    }
-}
+// .bl_inquiry{
+//     input,
+//     select,
+//     textarea { //入力エリア
+//         background-color: #fff;
+//         border-radius: 0;
+//     }
+//     th {
+//         width: 25%;
+//         font-weight: bold;
+//         @include fontSize(14);
+//         text-align: left;
+//         vertical-align: top;
+//         padding-right: .5em;
+//         padding-bottom: .5em;
+//     }
+//     td {
+//         padding-bottom: 2em;
+//         > span {
+//             display: block;
+//             * {
+//                 margin-left: 0;
+//             }
+//             input:not([type = "checkbox"]):not([type = "radio"]),
+//             textarea {
+//                 width: 100%;
+//                 padding-top: 7px;
+//                 padding-bottom: 7px;
+//             }
+//         }
+//     }
+//     th,
+//     td {
+//         @include media(sm) {
+//             width: 100%;
+//             display: block;
+//         }
+//     }
+//     .ajax-loader {
+//         display: none!important;
+//     }
+// }
 
 /*--------------------------------
     選択エリア

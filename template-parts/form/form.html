@@ -1,0 +1,61 @@
+<label>
+<span class="el_label el_label__need">必須</span>会社名
+[text* your-cope class:textsp class:need placeholder"例）株式会社○○○"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>お名前
+[text* your-name class:textsp class:need placeholder"例）田中太郎"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>お名前（フリガナ）
+[text* your-rubi class:textsp class:name_rubi placeholder"例）タナカタロウ"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>電話番号
+[tel* your-tel class:tel class:tell_number placeholder"例）0545677075"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>メールアドレス
+[email* your-email class:mailsp class:mail_address placeholder"例）info@example.com"]</label>
+
+<label>
+<span class="el_label el_label__any">任意</span>ドロップダウンメニュー
+[select dpmenu class:drop first_as_label "ご選択ください" "サンプル1" "サンプル2" "サンプル3"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>郵便番号
+[text* your-postalcode class:need zip id:zip placeholder"例）123-4567"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>都道府県
+[text* your-prefectures class:need pref id:pref placeholder"例）◯◯県"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>市区町村
+[text* your-addresscity id:city class:need addr id:addr placeholder"例）○○市○○町"]</label>
+
+<label>
+<span class="el_label el_label__need">必須</span>番地・マンション名など
+[text* your-addressnum id:num class:need addr placeholder"例）1-2-3　○○ビル3F"]</label>
+
+<span class="el_label el_label__any">任意</span>チェックボックス【複数選択可】
+[checkbox checkbox-1 use_label_element class:verticallist check "検索" "求人サイト" "イベント・勉強会" "知人からの紹介"]
+
+<span class="el_label el_label__need">必須</span>ラジオボタン
+[radio radio-1 use_label_element class:verticallist class:radio "商談のご相談""サービスに関するお問い合わせ""採用に関するお問い合わせ""その他"]
+
+<label>
+<span class="el_label el_label__any">任意</span>面談希望日
+[date date-960 placeholder class:datesp]</label>
+
+<label>
+<span class="el_label el_label__any">任意</span>お問い合わせ内容
+[textarea your-message class:content placeholder "ご自由にご記入ください"]</label>
+
+[submit id:formbtn class:el_btn_submit "送信する"]
+
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+	location = 'http://master.local/thanks';
+}, false );
+</script>
