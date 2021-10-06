@@ -86,8 +86,10 @@
 @import "module/block/pager";
 /******投稿一覧（縦並び）******/
 @import "module/block/vertPosts";
-/******投稿情報******/
+/******投稿タイトル******/
 @import "module/block/postInfo";
+/******固定ページタイトル******/
+@import "module/block/pageHeader";
 /******モバイルメニュー******/
 @import "module/block/mobileMenu";
 /******フォーム******/

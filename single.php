@@ -15,7 +15,7 @@ $area = 'sidebar-2'; // ウィジェットエリアの定義（デフォルト�
 
 <?php get_header(); // ヘッダー読み込み. ?>
 
-<div class="ly_cont ly_cont__single<?php ly_cont__col( 'dv_single' ); // カラム制御. ?>">
+<div class="ly_cont ly_cont__default ly_cont__single<?php ly_cont__col( 'dv_single' ); // カラム制御. ?>">
 
 	<main id="primary" class="site-main ly_cont_main">
 

@@ -11,11 +11,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="ly_sect_pageHerder entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title el_lv1Heading">', '</h1>' ); ?>
 	</header>
 	<!-- /.ly_sect_pageHerder -->
-
-	<?php underscores_post_thumbnail(); ?>
 
 	<section class="ly_sect_singleBody">
 		<div class="entry-content bl_entryContent">

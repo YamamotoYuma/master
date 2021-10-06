@@ -7,12 +7,9 @@
 
 ?>
 
-				<footer id="colophon" class="site-footer">
+				<footer id="colophon" class="site-footer ly_footer">
 
-					<div class="ly_footer_wrapper">
-
-						<div class="ly_footer">
-							<div class="ly_footer_inner">
+							<div class="ly_footer_inner top">
 								<a href="<?php echo esc_url( home_url() ); ?>" class="el_siteTtl"><?php the_field( 'ad_companyName', 'option' ); // 企業名. ?></a>
 								<dl class="el_adminInfo">
 									<dd class="el_adminInfo_data">〒<?php the_field( 'ad_postalCode', 'option' ); // 郵便番号. ?>&nbsp<?php the_field( 'ad_location', 'option' ); // 所在地. ?></dd>
@@ -21,19 +18,11 @@
 								</dl>
 							</div>
 							<!-- /.ly_footer_inner -->
-						</div>
-						<!-- /.ly_footer -->
 
-						<div class="ly_footer">
-							<div class="ly_footer_inner">
+							<div class="ly_footer_inner bottom">
 								<small class="el_copyright"><?php the_field( 'ad_copyWright', 'option' ); // コピーライト. ?></small>
 							</div
 							><!-- /.ly_footer_inner -->
-						</div>
-						<!-- /.ly_footer -->
-
-					</div>
-					<!-- /.ly_footer_wrapper -->
 
 				</footer>
 

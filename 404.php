@@ -9,11 +9,11 @@
 
 <?php get_header(); // ヘッダー. ?>
 
-<div class="ly_cont ly_cont__404">
+<div class="ly_cont ly_cont__default ly_cont__404">
 	<main id="primary" class="site-main ly_cont_main">
 
 		<header class="page-header ly_sect_pageHeader">
-			<h1 class="el_ttl__single"><span>ページが見つかりませんでした。</span></h1>
+			<h1 class="el_lv1Heading"><span>ページが見つかりませんでした。</span></h1>
 		</header>
 
 		<section class="ly_sect__single ly_sect_pageBody" style="text-align:center">

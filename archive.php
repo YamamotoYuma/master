@@ -10,7 +10,7 @@
 
 <?php get_header(); // ヘッダー. ?>
 
-<div class="ly_cont ly_cont__archive<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
+<div class="ly_cont ly_cont__default ly_cont__archive<?php ly_cont__col( 'dv_archive' ); // カラム制御. ?>">
 
 	<main id="primary" class="site-main ly_cont_main">
 

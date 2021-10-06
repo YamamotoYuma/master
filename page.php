@@ -21,7 +21,7 @@ $slug    = $page_id->post_name; // ページスラッグを取得.
 ?>
 <?php get_header(); // ヘッダー. ?>
 
-<div class="ly_cont ly_cont__<?php echo esc_attr( $slug ); ?><?php ly_cont__col(); // カラム制御. ?>">
+<div class="ly_cont ly_cont__default ly_cont__<?php echo esc_attr( $slug ); ?><?php ly_cont__col(); // カラム制御. ?>">
 	<main id="primary" class="site-main ly_cont_main">
 
 		<?php while ( have_posts() ) : // メインループ. ?>

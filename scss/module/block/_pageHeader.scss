@@ -1,0 +1,6 @@
+.ly_sect_pageHerder {
+	margin-bottom: 60px;
+	@include media(sm) {
+		margin-bottom: 30px;
+	}
+}
