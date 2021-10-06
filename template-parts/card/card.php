@@ -24,14 +24,14 @@ $terms = get_the_terms( $post->ID, $post_taxonomy_cat ) // .
 --------------------------------
 */
 ?>
-<li class="bl_card_default clearfix">
-	<a href="<?php the_permalink(); ?>" class="bl_card_default_layer"></a>
-	<div class="bl_card_default_inner left">
+<li class="bl_card clearfix">
+	<a href="<?php the_permalink(); ?>" class="bl_card_layer"></a>
+	<div class="bl_card_inner left">
 		<?php img_output_thumb( 'thumbnail' ); ?>
 	</div>
-	<!-- /.bl_card_default_inner.left -->
-	<div class="bl_card_default_inner right">
-		<div class="bl_card_default_meta">
+	<!-- /.bl_card_inner.left -->
+	<div class="bl_card_inner right">
+		<div class="bl_card_meta">
 			<time class="el_labelPostInfo el_labelPostInfo__beforeIcon_date" datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_time( 'Y年n月j日' ); ?></time>
 			<?php if ( $terms ) : // A. ?>
 				<?php $tarm_link = get_term_link( $terms[0]->slug, $post_taxonomy_cat ); ?>
@@ -41,11 +41,11 @@ $terms = get_the_terms( $post->ID, $post_taxonomy_cat ) // .
 			<!-- /.el_labelBorder -->
 			<?php endif; // A. ?>
 		</div>
-		<!-- /.bl_card_default_meta -->
-		<h6 class="bl_card_default_ttl">
+		<!-- /.bl_card_meta -->
+		<h6 class="bl_card_ttl">
 			<?php echo esc_attr( wp_trim_words( get_the_title(), 40, '…' ) ); // タイトル. ?>
 		</h6>
-		<p class="bl_card_default_excerpt"><?php the_excerpt(); ?></p>
+		<p class="bl_card_excerpt"><?php the_excerpt(); ?></p>
 	</div>
-	<!-- /.bl_card_default_inner.right -->
+	<!-- /.bl_card_inner.right -->
 </li>

@@ -4,6 +4,7 @@
 .ly_cont_side {
     .widget {
         > ul {
+			@include ul;
             li {
                 @include fontSize(14);
                 a {

@@ -3,14 +3,16 @@
 --------------------------------*/
 .bl_entryContent {
     margin: 0;
-    > *:first-child {
-        margin-top: 0;
+    > *:first-child { // 最上段のブロックは上マージンを削除（最優先処理）.
+		margin-top: 0!important;
     }
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 { //見出し
+	> * {
+		margin-bottom: 1em; // 全てのブロックで下マージンを設定（接触回避）.
+	}
+	> *:last-child {
+		margin-bottom: 0!important; // 最下段のブロックは下マージンを削除（最優先処理）.
+	}
+    h2, h3, h4, h5, h6 { // 見出し全般のスタイルを定義.
         font-weight: bold;
         line-height: 1.5;
         font-feature-settings: "palt";
@@ -37,93 +39,10 @@
             font-size: 1.2rem;
         }
     }
-    p { //段落
+    p {
         line-height: 1.9;
     }
-    p,
-    ul,
-    ol,
-    figure {
-        margin-bottom: 1em;
-    }
-    > *:last-child {
-        margin-bottom: 0;
-    }
-    ul > *:last-child { //順序無しリスト：基本形
-        margin-bottom: 0;
-    }
-    ul > li {
-        position: relative;
-        padding-left: 1em;
-        margin-bottom: 10px;
-        &::before {
-            content: '';
-            position: absolute;
-            top: .5em;
-            left: 0;
-            display: block;
-            width: .4em;
-            height: .4em;
-            background-color: $theme_color;
-            border-radius: 50%;
-        }
-    }
-    ul ul { //順序無しリスト：ネスト
-        padding-left: 1.5em;
-        margin-top: 10px;
-        list-style-type: circle;
-        & > *:last-child{
-            margin-bottom: 0;
-        }
-        & > li {
-            margin-bottom: 10px;
-            padding-left: 0;
-            &::before {
-                content: none;
-            }
-        }
-    }
-    ol { //順序有りリスト：基本形
-        counter-reset: bl_orderList;
-        & > *:last-child{
-            margin-bottom: 0;
-        }
-        & > li {
-            position: relative;
-            padding-left: 1em;
-            margin-bottom: 10px;
-            &:before {
-                content: counter(bl_orderList)'.';
-                position: absolute;
-                top: 0;
-                left: 0;
-                color: $theme_color;
-                font-weight: bold;
-                counter-increment: bl_orderList;
-            }
-        }
-    }
-    ol ol { //順序有りリスト：ネスト
-        margin-top: 10px;
-        counter-reset: bl_childOrderList;
-        > *:last-child{
-            margin-bottom: 0;
-        }
-        > li {
-            position: relative;
-            padding-left: 1em;
-            margin-top: 10px;
-            &::before {
-                content: counter(bl_childOrderList)'.';
-                position: absolute;
-                top: 0;
-                left: 0;
-                color: $theme_color;
-                counter-increment: bl_childOrderList;
-            }
-        }
-    }
-    .wp-block-table { //テーブル
+    .wp-block-table { // テーブルブロック.
         border: 1px solid $content_uCoror;
         @include media(sm) {
             border-right-width: 0;
@@ -169,25 +88,23 @@
             border-top: 1px solid $content_uCoror;
         }
     }
-    blockquote { //引用
+    blockquote { // 引用ブロック.
         color: #777;
     }
-    .wp-block-quote { //ブロッククオート
+    .wp-block-quote { // ブロッククオート.
         border-left: 5px solid $content_uCoror;
         padding: 1em;
         padding-right: 0;
         margin: 1.5em 0;
     }
-    .wp-block-pullquote { //プルクオート
+    .wp-block-pullquote { // プルクオート.
         text-align: center;
         padding: 1em;
         margin: 1.5em 0;
         border-top: 5px solid $content_uCoror;
         border-bottom: 5px solid $content_uCoror;
     }
-}
-
-/*------ サムネイル中央表示 -------*/
-.post-thumbnail { //サムネイル中央表示
-    text-align: center;
+	.post-thumbnail { // サムネイル.
+		text-align: center;
+	}
 }

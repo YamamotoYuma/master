@@ -25,7 +25,7 @@
 			</section>
 
 			<section class="ly_sect__archive ly_sect__archive_main">
-				<ul class="bl_card_defaultUnit">
+				<ul class="bl_cardUnit">
 					<?php while ( have_posts() ) : // メインループ. ?>
 						<?php the_post(); ?>
 

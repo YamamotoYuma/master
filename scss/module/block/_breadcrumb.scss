@@ -8,6 +8,7 @@
     background-color: #efefef;
     @include fontSize(14);
     > ul {
+		@include ul;
         @include contentArea;
         display: flex;
         margin-bottom: -5px;
