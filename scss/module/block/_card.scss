@@ -71,11 +71,8 @@
 /*--------------------------------
     投稿カード：関連記事、サイドバー
 --------------------------------*/
-.bl_cardPostUnit {
+.bl_cardUnit_relation {
 	@include ul;
-}
-
-.bl_postCardUnit__horize {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 3%;
@@ -84,7 +81,7 @@
     }
 }
 
-.bl_postCard {
+.bl_cardRelation {
     display: flex;
     border-bottom: 1px solid $base_borderColor;
     &:nth-of-type(-n+2) {
@@ -96,43 +93,45 @@
             border-top-width: 0!important;
         }
     }
-    &_inner {
-        &.left {
-            padding-right: 15px;
-            figure {
-                @include fluid(100);
-                width: 65px;
-            }
-        }
-        &.right {
-            flex: 1;
-            h6 {
-                @include fontSize(14);
-                margin-bottom: .2em;
-                > a {
-                    text-decoration: inherit;
-                    color: inherit;
-                    line-height: inherit;
-                    font-size: inherit;
-                }
-            }
-            time {
-                @include fontSize(11);
-                &::before {
-                    @include fas;
-                    content: '\f133';
-                    margin-right: .25em;
-                    line-height: 1;
-                }
-            }
-        }
-    }
+}
+
+.bl_cardRelation_inner {
+	&.left {
+		padding-right: 15px;
+		figure {
+			@include fluid(100);
+			width: 65px;
+		}
+	}
+	&.right {
+		flex: 1;
+		h6 {
+			@include fontSize(14);
+			margin-bottom: .2em;
+			> a {
+				text-decoration: inherit;
+				color: inherit;
+				line-height: inherit;
+				font-size: inherit;
+			}
+		}
+	}
+}
+
+.bl_cardRelation_date {
+	@include fontSize(11);
+	&::before {
+		@include fas;
+		content: '\f133';
+		margin-right: .25em;
+		line-height: 1;
+	}
 }
 
 /*--------------------------------
     投稿カード：投稿タイプ[news]
 --------------------------------*/
-.bl_cardNewsUnit {
+.bl_cardUnit_news {
     border-bottom: 1px solid $theme_borderColor;
 	@include ul;
 }
@@ -146,26 +145,29 @@
     @include media(sm) {
         display: block;
     }
-    .ble_vertPosts_date {
-        font-size: inherit;
-        line-height: 1;
-        color: #666;
-        margin-right: 1.25em;
-    }
-    .el_labelBorder {
-        width: 120px;
-        text-align: center;
-    }
-    .bl_cardNews_ttl {
-        font-size: inherit;
-        text-decoration: none;
-        color: $base_fontColor;
-        display: block;
-        @include media(sm) {
-            margin-top: .5em;
-            color: $theme_color;
-        }
-    }
+}
+
+.ble_vertPosts_date {
+	font-size: inherit;
+	line-height: 1;
+	color: #666;
+	margin-right: 1.25em;
+}
+
+.el_labelBorder {
+	width: 120px;
+	text-align: center;
+}
+
+.bl_cardNews_ttl {
+	font-size: inherit;
+	text-decoration: none;
+	color: $base_fontColor;
+	display: block;
+	@include media(sm) {
+		margin-top: .5em;
+		color: $theme_color;
+	}
 }
 
 .bl_cardNews_header {

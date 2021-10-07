@@ -13,6 +13,7 @@
 $page_id = get_post( get_the_ID() );
 $slug    = $page_id->post_name; // ページスラッグを取得.
 $args    = array( // サブループのテスト用.
+	'card' => 'news',
 	'type' => 'news',
 	'num'  => 3,
 );

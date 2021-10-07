@@ -11,6 +11,8 @@
 --------------------------------
 */
 
+$card_type = 'post';
+
 if ( $args['type'] ) {
 	$post_type_is = $args['type'];
 } else {
@@ -44,7 +46,7 @@ if ( $current_term && ! is_wp_error( $current_term ) ) {
 }
 
 if ( 'on' === $current ) {
-	$post_terms = $term_slug;} //ショートコード第八引数が「on」ならばカレントタームに指定
+	$post_terms = $term_slug;} // ショートコード第八引数が「on」ならばカレントタームに指定.
 
 /*
 --------------------------------
@@ -81,7 +83,7 @@ if ( ! empty( $post_terms ) || 'on' === $current ) {
 <?php $the_query = new WP_Query( $args ); ?>
 <?php if ( $the_query->have_posts() ) : // A. ?>
 
-	<ul class="bl_postCardUnit bl_postCardUnit__horize">
+	<ul class="bl_cardRelatUnit bl_cardRelatUnit__horize">
 
 		<?php while ( $the_query->have_posts() ) : // B. ?>
 			<?php $the_query->the_post(); ?>

@@ -5,6 +5,15 @@
  * @package WordPress
  */
 
+/*
+--------------------------------
+ *	変数定義
+--------------------------------
+*/
+if ( 'post' !== get_post_type() ) {
+	$card       = get_post_type(); // カスタム投稿タイプのスラッグを取得.
+	$card_class = '_' . $card; // カードタイプ（class）を格納.
+}
 ?>
 
 <?php get_header(); // ヘッダー. ?>
@@ -25,11 +34,11 @@
 			</section>
 
 			<section class="ly_sect__archive ly_sect__archive_main">
-				<ul class="bl_cardUnit">
+				<ul class="bl_cardUnit<?php echo esc_attr( $card_class ); // カードタイプ（class）を指定. ?>">
 					<?php while ( have_posts() ) : // メインループ. ?>
 						<?php the_post(); ?>
 
-						<?php get_template_part( 'template-parts/card/card' ); // 投稿カード. ?>
+						<?php get_template_part( 'template-parts/card/card', $card ); // 投稿カード. ?>
 
 					<?php endwhile; // メインループ. ?>
 				</ul>

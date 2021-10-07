@@ -65,9 +65,13 @@ class RelatedPost extends WP_Widget {
 		$args = array(
 			'num'      => $instance['limit'],
 			'current'  => 'on',
+			'type'     => 'any',
+			'card'     => 'relation',
 			'taxonomy' => 'relation',
+			'orderby'  => 'rand',
 		);
-		get_template_part( 'template-parts/sub/sub', 'relation', $args ); // サブループ.
+
+		get_template_part( 'template-parts/sub/sub', '', $args ); // サブループ.
 		echo wp_kses_post( $mains['after_widget'] );
 	}
 }

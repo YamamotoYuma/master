@@ -10,17 +10,6 @@
 .ly_footer_inner {
 	@include contentArea;
 }
-/*------ フッター調整 -------*/
-// .ly_footer_wrapper {
-//     background: $footer_background;
-//     padding-top: 40px;
-//     padding-bottom: 20px;
-//     & .ly_footer {
-//         padding-top: 0;
-//         padding-bottom: 0;
-//         background: transparent;
-//     }
-// }
 
 /*------ コピーライト -------*/
 .el_copyright {
