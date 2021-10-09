@@ -107,7 +107,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
  * <head>内にコードを挿入（オプションページ：HTMLタグ設定）.
  */
 function meta_headcustomtag() {
-	echo esc_html( get_field( 'cd_header', 'option' ) );
+	the_field( 'cd_header', 'option' );
 }
 add_action( 'wp_head', 'meta_headcustomtag', 0 );
 
@@ -115,7 +115,7 @@ add_action( 'wp_head', 'meta_headcustomtag', 0 );
  * <body>直後にコードを挿入（オプションページ：HTMLタグ設定）.
  */
 function meta_body_customtag() {
-	echo esc_html( get_field( 'cd_body', 'option' ) );
+	the_field( 'cd_body', 'option' );
 }
 	add_action( 'wp_body_open', 'meta_body_customtag' );
 
@@ -123,6 +123,6 @@ function meta_body_customtag() {
  * </body>前にコードを挿入（オプションページ：HTMLタグ設定）.
  */
 function foot_customtags() {
-	echo esc_html( get_field( 'cd_footer', 'option' ) );
+	the_field( 'cd_footer', 'option' );
 }
 add_action( 'wp_footer', 'foot_customtags' );
