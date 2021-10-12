@@ -56,14 +56,14 @@ if ( 'on' === $current ) {
  *  クエリ指定
 --------------------------------
 */
-$args = array(
+$query = array(
 	'post_type'           => $post_type_is,
 	'posts_per_page'      => $post_per_page,
 	'post__not_in'        => array( get_the_ID() ),
 	'paged'               => get_query_var( 'paged' ),
 	'ignore_sticky_posts' => 1, // 先頭固定表示機能を停止.
-	'orderby'             => $args['orderby'],
-	'order'               => $args['order'],
+	'orderby'             => $args['orderby'], // ソート基準を指定.
+	'order'               => $args['order'], // 昇順(ASC)/降順(DESC)を指定.
 	'tax_query'           => array(
 		'relation' => 'AND',
 	),
@@ -76,7 +76,16 @@ if ( ! empty( $post_terms ) || 'on' === $current ) {
 		'field'    => 'slug',
 		'terms'    => $post_terms,
 	);
-	array_push( $args['tax_query'], $tax_query1 );
+	array_push( $query['tax_query'], $tax_query1 );
+}
+
+/*------ 「関連フィールド」から投稿を指定する場合 -------*/
+if ( ! empty( $args['related_field'] ) ) {
+	unset( $query['post__not_in'] ); // 配列からキー['post__not_in']を削除（['post__in']との共存不可のため）.
+	$query['post__in']       = $args['related_field']; // queryに含む投稿IDを指定.
+	$query['orderby']        = 'post__in'; // ソート基準を再設定（配列に入っている順）.
+	$query['order']          = 'DESC'; // 昇順(ASC)/降順(DESC)をを再設定（強制的に初期値）.
+	$query['posts_per_page'] = -1; // 表示等工数を「全て」に再設定（強制的に初期値）.
 }
 
 /*
@@ -85,7 +94,7 @@ if ( ! empty( $post_terms ) || 'on' === $current ) {
 --------------------------------
 */
 ?>
-<?php $the_query = new WP_Query( $args ); ?>
+<?php $the_query = new WP_Query( $query ); ?>
 <?php if ( $the_query->have_posts() ) : // A. ?>
 
 	<ul class="bl_cardUnit<?php echo esc_attr( $card_class ); // カードタイプ（class）を指定. ?>">

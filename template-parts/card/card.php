@@ -10,13 +10,21 @@
  *  変数定義
 --------------------------------
 */
-$taxonomy_slug     = array_keys( get_the_taxonomies() ); // タクソノミーオブジェクトを全て取得.
-$taxonomy_cat      = get_taxonomy( $taxonomy_slug[0] ); // 連想配列の先頭のタクソノミーオブジェクトを取得.
-$post_taxonomy_cat = $taxonomy_cat->name; // カテゴリースラッグを抽出.
-if ( 'relation' === $post_taxonomy_cat ) {
-	$post_taxonomy_cat = null; // タグスラッグを拾ったら空の値を返す.
-}
-$terms = get_the_terms( $post->ID, $post_taxonomy_cat ) // .
+/*------ カテゴリータイプタクソノミーと関連タグ（relation）タクソノミーを仕分けする -------*/
+$taxonomy_slug = array_keys( get_the_taxonomies() ); // 投稿の属するタクソノミーを取得.
+foreach ( $taxonomy_slug as $key => $val ) { // F 特定条件で配列から除外.
+	if ( 'relation' === $val ) {
+		unset( $taxonomy_slug[ $key ] );
+	}
+} // F 特定条件で配列から除外.
+$taxonomy_slug     = array_values( $taxonomy_slug ); // Indexを詰める.
+$taxonomy_cat      = get_taxonomy( $taxonomy_slug[0] );
+$post_taxonomy_cat = $taxonomy_cat->name; // カテゴリータイプタクソノミー.
+$post_taxonomy_tag = 'relation'; // タグタイプタクソノミー（関連タグ）.
+
+/*------ タームを格納 -------*/
+$terms     = get_the_terms( $post->ID, $post_taxonomy_cat ); // カテゴリータイプタクソノミーのタームを格納.
+$terms_tag = get_the_terms( $post->ID, $post_taxonomy_tag ); // タグタイプタクソノミーのタームを格納.
 
 /*
 --------------------------------
