@@ -13,6 +13,17 @@ $base_fontFamily: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino S
 $sub_fontFamily: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 
 //--------------------------------
+//  line-height
+//--------------------------------
+$leading-none: 1 !default;
+$leading-x-tight: 1.25 !default;
+$leading-tight: 1.5 !default;
+$leading-snug: 1.6 !default;
+$leading-normal: 1.7 !default;
+$leading-relaxed: 1.8 !default;
+$leading-loose: 2 !default;
+
+//--------------------------------
 //  フォントカラー
 //--------------------------------
 //------ デフォルトテキスト -------//

@@ -159,6 +159,7 @@
 
 //--------------------------------
 //  リンクレイアー（要素全体にリンクエリアを適用）
+//  ※注：親要素に[position: relative;]を指定すること
 //--------------------------------
 @mixin layer() {
     position: absolute;
@@ -170,8 +171,8 @@
 }
 
 //--------------------------------
-//  リストタグセットのスタイルをリセット
-//  ※主にulタグに設置想定
+//  ul,olのスタイルをリセット
+//  （margin-leftとlist-styleの初期化）
 //--------------------------------
 @mixin ul() {
     list-style: none;
@@ -202,3 +203,23 @@
     }
 }
 
+//--------------------------------
+//  ハーフリーディングを除外する
+//  @param int lineheight 要素のline-height
+//--------------------------------
+@mixin lineHeightCrop($line-height) {
+	&::before {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-top: calc((1 - #{$line-height}) * .5em);
+		content: '';
+	}
+	&::after {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-bottom: calc((1 - #{$line-height}) * .5em);
+		content: '';
+	}
+}
