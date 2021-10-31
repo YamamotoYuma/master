@@ -52,3 +52,56 @@
         }
     }
 }
+
+/*--------------------------------
+    マイクロインタラクションver
+--------------------------------*/
+// .el_pageTop {
+//     position: fixed;
+//     right: 15px;
+//     bottom: 15px;
+// 	transform: scale(0);
+// 	transition-property: opacity, transform;
+//     transition-duration: 0.25s;
+// 	transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+// 	transform-origin: cetenr;
+// 	&.js_active {
+// 		transform: scale(1);
+// 		> a::before {
+// 			opacity: 1;
+// 			transform: translateY(0);
+// 			transition-property: opacity, transform;
+//     		transition-delay: 0.25s;
+// 			transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+// 			transition-duration: 0.25s;
+// 		}
+// 	}
+//     > a {
+//         position: relative;
+//         display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+//         background-color: $theme_color;
+//         border-radius: 50%;
+//         width: 40px;
+//         height: 40px;
+//         text-decoration: none;
+//         line-height: 1;
+//         &:focus,
+//         &:hover {
+//             opacity: .6;
+// 			transform: scale(1.1);
+//         }
+//         &::before {
+// 			opacity: 0;
+// 			transform: translateY(10px);
+//             content: '';
+// 			display: block;
+// 			width: 14px;
+// 			height: 10px;
+// 			background-image: url('../img/arrow_04.svg');
+// 			background-repeat: no-repeat;
+// 			background-size: cover;
+//         }
+//     }
+// }

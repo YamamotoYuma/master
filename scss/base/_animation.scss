@@ -4,3 +4,42 @@
 a {
     transition: .25s;
 }
+
+/*--------------------------------
+    カーテンアニメーション
+--------------------------------*/
+.an_curtain {
+	position: relative;
+	&::after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: $theme_color;
+		z-index: 1;
+	}
+	&.js_active::after {
+		transform: scaleX(0);
+		transform-origin: right;
+		transition-property: transform;
+		transition-duration: 0.85s;
+		transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+	}
+}
+
+/*--------------------------------
+    スクロールイン（画面内に入ったら発火）
+--------------------------------*/
+.js_scrollIn {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: 1s;
+}
+
+.js_scrollIn.js_active {
+	opacity: 1;
+	transform: translateY(0);
+}

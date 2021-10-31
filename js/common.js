@@ -55,7 +55,7 @@ jQuery(document).ready(function ($) {
 	--------------------------------*/
 	var headerHight = 50; // ヘッダーの高さ.
 	// *ページ内リンク.
-	$('a[href^="#"]').click(function () {
+	$('a[href^="#"]').not('.bl_tabCtrl_wrapper a[href^="#panel"]').click(function () {
 		var href = $(this).attr("href");
 		var target = $(href == "#" || href == "" ? 'body' : href);
 		var position = target.offset().top - headerHight;
@@ -106,7 +106,7 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	  /*--------------------------------
+	/*--------------------------------
 	 * タブレイアウト：タブ切り替え機能
 	--------------------------------*/
     $(function() {

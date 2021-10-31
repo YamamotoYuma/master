@@ -168,7 +168,7 @@ add_filter( 'get_custom_logo', 'add_custom_logo_url' );
 function add_custom_logo_url() {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$html           = sprintf(
-		'<a href="%1$s" class="custom-logo-link el_siteLogo" rel="home" itemprop="url">%2$s</a>',
+		'<a href="%1$s" class="custom-logo-link el_siteLogo" rel="home">%2$s</a>',
 		esc_url( home_url() ),
 		wp_get_attachment_image(
 			$custom_logo_id,
@@ -263,9 +263,7 @@ function custom_welcome_panel() {
 		</div>
 		<div class="content_wrapper right">
 			<h2>操作方法にこまったら…</h2>
-			<a href="<?php the_field( 'dv_manual', 'option' ); ?>" class="button button-primary button-hero load-customize hide-if-no-customize" target="_blank">操作マニュアルへ</a> <!-- /.el_btn top -->
-			<h2>もっと集客成果を出したい！と思ったら…</h2>
-			<a href="<?php the_field( 'dv_roadmap', 'option' ); ?>" class="button button-primary button-hero load-customize hide-if-no-customize" target="_blank">ウェブ集客ロードマップへ</a> <!-- /.el_btn top -->
+			<a href="<?php the_field( 'dv_manual', 'option' ); ?>" class="button button-primary button-hero load-customize hide-if-no-customize" target="_blank">操作マニュアルへ</a>
 		</div>
 		<!-- /.content_wrapper -->
 	</div>
@@ -312,3 +310,43 @@ add_action(
 		$role->add_cap( 'edit_theme_options' );
 	}
 );
+
+/**
+ * --------------------------------
+ * 検索結果にカスタム投稿タイプを含める（案件ごと要指定）
+ * --------------------------------
+ *
+ * @param str $query 投稿タイプ.
+ */
+function filter_search( $query ) {
+	if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
+		$query->set( 'post_type', array( 'post' ) );
+	}
+}
+add_filter( 'pre_get_posts', 'filter_search' );
+
+/**
+ * --------------------------------
+ * アーカイブウィジェットの投稿数をaタグに内包する
+ * --------------------------------
+ *
+ * @param str $output comment.
+ */
+function my_archives_link( $output ) {
+	$output = preg_replace( '/<\/a>\s*(&nbsp;)\((\d+)\)/', ' ($2)</a>', $output ); // 正規表現による置換.
+	return $output;
+}
+add_filter( 'get_archives_link', 'my_archives_link' );
+
+/**
+ * --------------------------------
+ * カテゴリーウィジェットの投稿数をaタグに内包する
+ * --------------------------------
+ *
+ * @param str $output comment.
+ */
+function my_list_categories( $output ) {
+	$output = preg_replace( '/<\/a>\s*\((\d+)\)/', ' ($1)</a>', $output ); // 正規表現による置換.
+	return $output;
+}
+add_filter( 'wp_list_categories', 'my_list_categories' );
