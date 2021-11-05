@@ -79,13 +79,13 @@
             width: auto;
             min-width: 100%;
         }
-    }
-    th,
-    td {
-          white-space: nowrap;
-    }
-    th:last-child,
-    td:last-child {
-        border-right-width: 1px;
+		th,
+		td {
+			  white-space: nowrap;
+		}
+		th:last-child,
+		td:last-child {
+			border-right-width: 1px;
+		}
     }
 }
