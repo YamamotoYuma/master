@@ -46,8 +46,12 @@ function set_sidebar( $tmp = 'dv_page', $name = '' ) {
  * @param str $size 画像サイズ ※省略化（オリジナルサイズ）.
  * @param int $read 投稿ID ※省略化（現在の投稿）.
  * @param str $cls 固有クラス名の指定 ※省略化（.el_acf_img）.
+ * @param str $ani comment.
  */
-function img_output_thumb( $size = 'url', $read = '', $cls = '' ) {
+function img_output_thumb( $size = 'url', $read = '', $cls = '', $ani = '' ) {
+	if ( $ani ) {
+		$ani = ' js_scrollIn ' . $ani; // アニメーション用追加クラス.
+	}
 	$object = get_field( 'ad_noImage', 'option' );
 	if ( 'url' === $size ) {
 		$img    = get_the_post_thumbnail_url( $read );
@@ -62,7 +66,7 @@ function img_output_thumb( $size = 'url', $read = '', $cls = '' ) {
 		$url = $object;
 	}
 	?>
-<figure class="el_acf_img<?php echo esc_attr( $cls ); ?>">
+<figure class="el_acf_img<?php echo esc_attr( $cls ); ?><?php echo esc_attr( $ani ); ?>">
 	<img src="<?php echo esc_url( $url ); ?>" alt="サムネイル">
 </figure>
 	<?php

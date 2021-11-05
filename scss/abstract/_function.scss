@@ -18,3 +18,35 @@
     }
     @return $str;
 }
+
+//--------------------------------
+//  角度(deg)からラジアン(rad)を求める
+//--------------------------------
+@function rad($angle) {
+	$pi: 3.14159265359;
+    @return abs($angle) * $pi / 180;
+}
+
+//--------------------------------
+//  skewXで傾けた要素の横幅(%)
+//  @param str $angle  角度(deg)
+//             $height 幅に対する高さの比率（％）
+//--------------------------------
+@function skew_width($angle, $height) {
+	@return 100 + (rad($angle) * $height ) * 1%;
+}
+
+//--------------------------------
+//  skewXで傾けた要素の余白(%)
+//  @param str $angle  角度(deg)
+//             $height 幅に対する高さの比率（％）
+//--------------------------------
+//------ 正 -------//
+@function skew_blank($angle, $height) {
+	@return (rad($angle) * $height / 2) * 1%;
+}
+
+//------ 負 -------//
+@function skew_blank_minus($angle, $height) {
+	@return (rad($angle) * $height / 2) * -1%;
+}

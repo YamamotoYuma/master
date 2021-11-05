@@ -235,3 +235,50 @@
 		content: '';
 	}
 }
+
+//--------------------------------
+//  カーテンアニメーション（要figure直下に空div[.an_curtain_layer]配置）
+//  @param int $angle  傾きの角度(skewX)
+//  @param int $height フルードイメージの高さ(%)
+//  @param int $color  背景色1
+//  @param int $color  背景色2
+//--------------------------------
+@mixin curtain( $angle, $height, $color: $body_color, $color_2: $theme_color ) {
+	.an_curtain_layer {
+		margin: 0;
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: skew_blank_minus($angle, $height);
+		min-width: skew_width($angle, $height);
+		height: 100%;
+		z-index: 3;
+		background-color: rgba($color_2, .3);
+		transform: skew($angle * 1deg);
+		transition: .6s cubic-bezier(1,0,.6,1);
+	}
+	&::before{
+		margin: 0;
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: skew_blank_minus($angle, $height);
+		min-width: skew_width($angle, $height);
+		height: 100%;
+		z-index: 4;
+		background-color: $color;
+		transform: skew($angle * 1deg);
+		transition: .3s cubic-bezier(.12,.01,1,.99);
+	}
+	&.js_active {
+		.an_curtain_layer {
+			transition-delay: .3s;
+			transform: skew($angle * 1deg) translateX(100%);
+		}
+		&::before {
+			transform: skew($angle * 1deg) translateX(100%);
+		}
+	}
+}
