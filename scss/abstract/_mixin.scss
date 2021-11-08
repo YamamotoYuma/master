@@ -51,12 +51,12 @@
         }
     }
     @else if $size == md { //[引数]md：タブレット
-        @media screen and (min-width : $breakpoint_small + 1) and (max-width : $breakpoint_medium){ //タブレットのみ適用
+        @media screen and (min-width : ( $breakpoint_small + 1) ) and (max-width : $breakpoint_medium){ //タブレットのみ適用
             @content;
         }
     }
     @else if $size == lg { //[引数]lg：デスクトップ
-        @media screen and (min-width : $breakpoint_medium + 1){
+        @media screen and (min-width : ( $breakpoint_medium + 1 )){
             @content;
         }
     }
@@ -66,7 +66,7 @@
         }
     }
     @else if $size == mdlg { //[引数]mdlg：タブレット＋デスクトップ
-        @media screen and (min-width : $breakpoint_small + 1){
+        @media screen and (min-width : ( $breakpoint_small + 1 )){
             @content;
         }
     }
