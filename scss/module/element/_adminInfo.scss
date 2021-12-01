@@ -2,13 +2,16 @@
     管理者情報を縦並びで表示
 --------------------------------*/
 .el_adminInfo {
+	@include ul;
     color: $footer_fontColor;
     & > *:last-child {
         margin-bottom: 0;
     }
 }
 .el_adminInfo_data {
-    font-size: 0.875em;
+    @include fontSize(14);
     line-height: 1;
-    margin-bottom: 0.7142em;
+	&:not(:first-child) {
+		margin-top: .875em;
+	}
 }

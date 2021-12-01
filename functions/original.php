@@ -285,10 +285,13 @@ function btn( $title, $option = 'option' ) {
 	$group_field = get_field( $field, $option ); // フィールドオブジェクトを変数に格納.
 	$class       = 'el_btn__' . $title; // 専用のモディファイアクラスを生成.
 	?>
-	<a class="el_btn <?php echo esc_attr( $cls ); ?>" href="<?php echo esc_url( $group_field['link'] ); ?>">
-		<?php echo esc_html( $group_field['ttl'] ); // タイトル. ?>
-	</a>
-	<!-- /.el_btn -->
+	<div class="el_btn_wrapper <?php echo esc_attr( $cls ); ?>_wrapper">
+		<a class="el_btn <?php echo esc_attr( $cls ); ?>" href="<?php echo esc_url( $group_field['link'] ); ?>">
+			<?php echo esc_html( $group_field['ttl'] ); // タイトル. ?>
+		</a>
+		<!-- /.el_btn -->
+	</div>
+	<!-- /.el_btn_wrapper -->
 	<?php
 }
 
@@ -528,5 +531,29 @@ function archive_ttl( $type ) {
 		</div>
 		<!-- /.ly_sect__pageHerder_inner -->
 	</header>
+	<?php
+}
+
+/**
+ * ------ 特定のタクソノミーからタームを出力 -------
+ *
+ * @param str $taxonomy タクソノミー.
+ */
+function get_single_tarms( $taxonomy ) {
+	$terms = get_the_terms( $post->ID, $taxonomy );
+	?>
+	<?php if ( ! empty( $terms ) ) : // 投稿に紐づくタームが存在すれば. ?>
+		<?php if ( ! is_wp_error( $terms ) ) : // エラー出力がなければ. ?>
+			<div class="bl_termUnit">
+				<?php foreach ( $terms as $term_value ) : // A. ?>
+					<?php $tarm_link = get_term_link( $term_value->slug, $taxonomy ); // タームリンク. ?>
+					<a class="bl_term" href="<?php echo esc_url( $tarm_link ); ?>">
+						<?php echo esc_html( $term_value->name ); // タームラベル. ?>
+					</a>
+				<?php endforeach; // A. ?>
+			</div>
+			<!-- /.bl_termUnit -->
+		<?php endif; // エラー出力がなければ. ?>
+	<?php endif; // 投稿に紐づくタームが存在すれば. ?>
 	<?php
 }

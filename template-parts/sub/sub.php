@@ -97,7 +97,7 @@ if ( ! empty( $args['related_field'] ) ) {
 <?php $the_query = new WP_Query( $query ); ?>
 <?php if ( $the_query->have_posts() ) : // A. ?>
 
-	<ul class="bl_cardUnit<?php echo esc_attr( $card_class ); // カードタイプ（class）を指定. ?>">
+	<ul class="bl_cardUnit<?php echo esc_attr( $card_class ); // カードタイプ（class）を指定. ?> clearListStyle">
 
 		<?php while ( $the_query->have_posts() ) : // B. ?>
 			<?php $the_query->the_post(); ?>

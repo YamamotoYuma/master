@@ -3,14 +3,14 @@
 --------------------------------*/
 .bl_cardUnit {
     @include ul;
-    border-top: 1px solid $base_borderColor;
+    border-top: 1px solid $theme_borderColor;
 }
 
 .bl_card {
     position: relative;
     margin-top: 1rem;
     padding-bottom: 1em;
-    border-bottom: 1px solid $base_borderColor;
+    border-bottom: 1px solid $theme_borderColor;
     .bl_card_layer {
         @include layer;
     }
@@ -83,9 +83,9 @@
 
 .bl_cardRelation {
     display: flex;
-    border-bottom: 1px solid $base_borderColor;
+    border-bottom: 1px solid $theme_borderColor;
     &:nth-of-type(-n+2) {
-        border-top: 1px solid $base_borderColor;
+        border-top: 1px solid $theme_borderColor;
     }
     padding: 15px 0;
     @include media(sm) {

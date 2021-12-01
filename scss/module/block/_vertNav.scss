@@ -1,52 +1,41 @@
 /*--------------------------------
     縦並びナビゲーション（Footer内利用を想定）
 --------------------------------*/
-.bl_vertNav {
+.bl_vertNavUnit {
+	margin: 0 -30px;
     display: flex;
-    justify-content: start;
-    & > li {
-        flex: 1;
-        text-align: center;
-        & *:last-child {
-            margin-bottom: 0;
-        }
-        &:last-child > a:after {
-            content: none;
-        }
-        & > a {
-            position: relative;
-            display: block;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-bottom: 10px;
-            color: #FFF;
-            text-decoration: none;
-            &:focus,
-            &:hover {
-                text-decoration: underline;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 1px;
-                height: 15px;
-                background-color: currentColor;
-                transform: translateY(-50%);
-            }
-        }
-        & ul > li { //ネストされたメニュー
-            margin-bottom: 10px;
-            & > a {
-                color: #DDD;
-                font-size: 15px;
-                text-decoration: none;
-                &:focus,
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
+	color: $footer_fontColor;
+	> * {
+		flex: 1;
+	}
+}
+
+.bl_vertNav {
+	@include ul;
+	margin: 0 30px;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	> li {
+		@include fontSize(14);
+		vertical-align: middle;
+		white-space: nowrap;
+		line-height: 1;
+		&::before {
+			margin-right: 15px;
+			@include fas;
+			content: '\f068';
+			@include fontSize(12);
+		}
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+		&.current-menu-item { // カレント表示.
+			color: $accent_color;
+			> a {
+				color: inherit;
+			}
+		}
+	}
 }

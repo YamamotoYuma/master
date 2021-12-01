@@ -13,7 +13,7 @@
 $nav = array( // グローバルナビゲーション.
 	'container'      => false,
 	'menu_class'     => 'bl_headerNav',
-	'theme_location' => 'menu-1',
+	'theme_location' => 'main-menu',
 );
 
 /*
@@ -40,26 +40,25 @@ $nav = array( // グローバルナビゲーション.
 
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'underscores' ); ?></a>
 
-		<header id="masthead" class="site-header ly_header">
+		<header id="masthead" class="site-header ly_header_wrapper">
 
-			<div class="ly_header_inner">
+			<div class="ly_header">
+				<!-- /.ly_header -->
+					<div class="ly_header_inner left">
+						<?php if ( is_front_page() || is_home() ) : // A サイトロゴ：トップページならh1タグに内包. ?>
+							<h1 class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></h1>
+						<?php else : // A サイトロゴ：トップページ以外ならdivタグに内包. ?>
+							<div class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></div>
+						<?php endif; // A サイトロゴ条件分岐. ?>
+					</div>
+					<!--/.ly_header_inner-->
 
-				<div class="bl_headerUtils">
-
-					<?php if ( is_front_page() || is_home() ) : // A サイトロゴ：トップページならh1タグに内包. ?>
-						<h1 class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></h1>
-					<?php else : // A サイトロゴ：トップページ以外ならdivタグに内包. ?>
-						<div class="bl_headerUtils_logo_wrapper"><?php the_custom_logo(); ?></div>
-					<?php endif; // A サイトロゴ条件分岐. ?>
-					<a class="el_btn" href="<?php the_field( 'ad_inquiryLink', 'option' ); ?>">お問い合わせ</a>
-
-				</div>
-				<!--/.bl_headerUtils-->	
-
-				<nav class="bl_headerNav_wrapper"><?php wp_nav_menu( $nav ); // グローバルナビゲーション. ?></nav>
-
+					<div class="ly_header_inner right mdlg">
+						<nav class="bl_headerNav_wrapper"><?php wp_nav_menu( $nav ); // グローバルナビゲーション. ?></nav>
+					</div>
+					<!-- /.ly_header_inner right -->
 			</div>
-			<!--/.ly_header_inner-->
+
 		</header>
 		<!--/.ly_header-->
 

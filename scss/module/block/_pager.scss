@@ -15,7 +15,7 @@
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 15px;
-    border: 1px solid $base_borderColor;
+    border: 1px solid $theme_borderColor;
     border-radius: .25rem;
     overflow: hidden;
     position: relative;
@@ -40,13 +40,13 @@
     }
     &.prev {
         .bl_page_inner.cont {
-            border-left: 1px solid $base_borderColor;
+            border-left: 1px solid $theme_borderColor;
         }
     }
     &.next {
         flex-direction: row-reverse;
         .bl_pager_inner.cont {
-            border-right: 1px solid $base_borderColor;
+            border-right: 1px solid $theme_borderColor;
             > p {
                 text-align: right;
             }

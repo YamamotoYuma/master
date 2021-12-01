@@ -22,6 +22,11 @@
     }
 }
 
+/*------ デフォルトのポジショニング -------*/
+.el_btn_wrapper {
+	text-align: center;
+}
+
 /*------ 矢印付き -------*/
 .el_btn.el_btn__arrowRight {
     position: relative;

@@ -1,38 +1,31 @@
 /*--------------------------------
     グローバルナビゲーション
 --------------------------------*/
+.bl_headerNav_wrapper,
+.bl_headerNav,
+.bl_headerNav > li > a  {
+	height: 100%;
+}
+
 .bl_headerNav {
-    display: flex;
-    justify-content: space-between;
 	@include ul;
+    display: flex;
+	flex-wrap: wrap;
+	margin: 0 -20px;
     > li {
-        flex-grow: 1;
+		padding: 0 20px;
         text-align: center;
-        &:last-child > a::after {
-            content: none;
-        }
         > a {
+			padding: 15px 0;
             position: relative;
-            display: block;
-            padding: 15px 5px;
-            border-bottom: 4px solid transparent;
-            color: $base_fontColor;
+            display: flex;
+			align-items: center;
+            color: $header_fontColor;
+			font-weight: 600;
+			letter-spacing: .05em;
             text-decoration: none;
             transition: .25s;
-            &:focus,
-            &:hover {
-                border-bottom-color: $accent_color;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 1px;
-                height: 20px;
-                background-color: #ddd;
-                transform: translateY(-50%);
-            }
+			line-height: 1.25;
         }
     }
 }

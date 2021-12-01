@@ -38,6 +38,7 @@ add_action( 'widgets_init', 'underscores_widgets_init' );
  */
 function register_my_menu() {
 	register_nav_menu( 'main-menu', 'Main Menu' ); // デフォルト.
-	register_nav_menu( 'sub-menu', 'Sub Menu' ); // サブ.
+	register_nav_menu( 'footer-left', 'Footer Left' ); // フッター（左）.
+	register_nav_menu( 'footer-right', 'Footer Right' ); // フッター（右）.
 }
 add_action( 'after_setup_theme', 'register_my_menu' );

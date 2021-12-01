@@ -1,3 +1,9 @@
 09/28/21 3:13:13: main.scss - `helper/decoration` file not found for @import: main.scss on line 50, at column 1
 09/28/21 3:13:16: main.scss - `helper/decoration` file not found for @import: main.scss on line 50, at column 1
 09/28/21 3:14:15: main.scss - `helper/decoration` file not found for @import: main.scss on line 50, at column 1
+11/27/21 2:10:48: main.scss - Undefined variable $header_background: layout/_header.scss on line 5, at column 2
+Call Stack:
+#0 import layout/_header.scss main.scss on line 20
+11/27/21 2:12:48: main.scss - Undefined variable $base_color: abstract/_variable.scss on line 104, at column 1
+Call Stack:
+#0 import abstract/_variable.scss main.scss on line 4

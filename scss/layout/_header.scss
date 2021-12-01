@@ -1,29 +1,21 @@
 /*--------------------------------
     ヘッダー
 --------------------------------*/
-.ly_header{
-    padding: {
-        top: 20px;
-    }
-    border: {
-        bottom: 1px solid $base_borderColor;
-    }
-    &_inner{
-        @include contentArea;
-        @include media(sm) {
-            padding-top: 5px;
-        }
-    }
+.ly_header_wrapper {
+	background-color: $header_background;
+	border-bottom: 1px solid; 
+	border-color: $theme_borderColor;
 }
 
-.bl_headerUtils {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    & .el_btn { //お問い合わせボタン
-        width: auto;
-        padding: 10px 20px;
-        box-shadow: none;
-    }
+.ly_header {
+	@include contentArea;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ly_header_inner {
+	&.left {
+		padding: 15px 40px 15px 0;
+		flex: 1;
+	}
 }

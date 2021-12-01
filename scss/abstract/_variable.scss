@@ -60,53 +60,57 @@ $leading-loose: 2 !default;
 //  フォントカラー
 //--------------------------------
 //------ デフォルトテキスト -------//
-$base_fontColor: #333;
+$base_fontColor: #333333;
 
 //------ リンクテキスト -------//
 $anchor_fontColor: #0069ff;
 
 //------ フッターテキスト -------//
-$footer_fontColor: #fff;
+$footer_fontColor: #ffffff;
 
 //------ ヘッダーテキスト -------//
-$header_fontColor: #fff;
+$header_fontColor: $base_fontColor;
 
 //--------------------------------
-//  テーマカラー
+//  プリセットカラー
 //--------------------------------
-//------ ボディーカラー -------//
-$body_color: #fff;
-//------ ベースカラー -------//
+//------ ベース -------//
+$base_color: #FFFFFF;
+
+//------ テーマ -------//
 $theme_color: #074750;
 
-//------ アクセントカラー -------//
+//------ アクセント -------//
 $accent_color:  #92C130;
 
-//------ サブカラー -------//
+//------ サブ -------//
 $sub_color:  #074750;
-
-$second_color:  #EDF5F5; //削除予定
-$layer_color: #fff; //削除予定
 
 //--------------------------------
 //  ユーティリティーカラー
 //--------------------------------
 //------ ボーダー -------//
-$base_borderColor: #DDD; //削除予定
-$theme_borderColor: #DCE8E3;
+$theme_borderColor: #DDDDDD;
+
 //------ wysiwygユーティリティ -------//
-$content_uCoror: #ddd;
+$content_uCoror: $theme_borderColor;
 
 //--------------------------------
 //  エリアカラー
 //--------------------------------
-//------ フッター背景 -------//
-$footer_background: #3C6668;
+//------ ボディー -------//
+$body_color: $base_color;
 
-//------ ドロワーメニューエリア -------//
-$mobileMenu_bg: #fff; //エリア内背景色
-$mobileMenu_fc: #333; //エリア内文字色
-$mobileMenu_bc: #ccc; //エリア内線色
+//------ ヘッダー -------//
+$header_background: $base_color;
+
+//------ フッター -------//
+$footer_background: $theme_color;
+
+//------ ドロワーメニュー -------//
+$mobileMenu_bg: $base_color; //エリア内背景色
+$mobileMenu_fc: $base_fontColor; //エリア内文字色
+$mobileMenu_bc: $theme_borderColor; //エリア内線色
 
 //--------------------------------
 //  ブレイクポイント

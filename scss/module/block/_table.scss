@@ -2,7 +2,7 @@
   テーブル（水平）
 --------------------------------*/
 .bl_horizTable {
-    border: 1px solid $base_borderColor;
+    border: 1px solid $theme_borderColor;
     table {
         width: 100%;
     }
@@ -10,13 +10,13 @@
         width: 20%;
         padding: 15px;
         background-color: #efefef;
-        border-bottom: 1px solid $base_borderColor;
+        border-bottom: 1px solid $theme_borderColor;
         font-weight: bold;
         vertical-align: middle;
       }
       td {
           padding: 15px;
-          border-bottom: 1px solid $base_borderColor;
+          border-bottom: 1px solid $theme_borderColor;
       }
       tr:last-child th,
       tr:last-child td {
@@ -44,7 +44,7 @@
 --------------------------------*/
 .bl_vertTable {
     table {
-        border: 1px solid $base_borderColor;
+        border: 1px solid $theme_borderColor;
         width: 100%;
         text-align: center;
         table-layout: fixed;
@@ -58,8 +58,8 @@
     th,
     td {
         padding: 15px;
-        border-right: 1px solid $base_borderColor;
-        border-bottom: 1px solid $base_borderColor;
+        border-right: 1px solid $theme_borderColor;
+        border-bottom: 1px solid $theme_borderColor;
         vertical-align: middle;
     }
     th:last-child,

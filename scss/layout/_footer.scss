@@ -1,14 +1,30 @@
 /*--------------------------------
     フッター
 --------------------------------*/
-.ly_footer {
-	padding-top: 20px;
-	padding-bottom: 20px;
+.ly_footer_wrapper {
+	padding-top: 30px;
 	background-color: $footer_background;
+	.el_adminInfo {
+		margin-top: 30px;
+	}
 }
 
-.ly_footer_inner {
+.ly_footer {
 	@include contentArea;
+	&.top {
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		gap: percentage(60 / $content_width_calc);
+	@include media(sm) {
+		display: block;
+		> *:not(:first-child) {
+			margin-top: 20px;
+		}
+	}
+	}
+	&.bottom {
+		padding: 20px 0;
+	}
 }
 
 /*------ コピーライト -------*/
@@ -16,14 +32,5 @@
     display: block;
     color: $footer_fontColor;
     font-size: 12px;
-}
-
-.ly_footer .el_copyright {
-    padding-top: 10px;
-    text-align: center;
-}
-
-/*------ サイトタイトル -------*/
-.ly_footer .el_siteTtl {
-    margin-bottom: 1em;
+	text-align: center;
 }
