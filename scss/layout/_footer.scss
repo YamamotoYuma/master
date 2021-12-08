@@ -15,12 +15,12 @@
 		display: grid;
 		grid-template-columns: 1fr auto auto;
 		gap: percentage(60 / $content_width_calc);
-	@include media(sm) {
-		display: block;
-		> *:not(:first-child) {
-			margin-top: 20px;
+		@include media(sm) {
+			display: block;
+			> *:not(:first-child) {
+				margin-top: 20px;
+			}
 		}
-	}
 	}
 	&.bottom {
 		padding: 20px 0;

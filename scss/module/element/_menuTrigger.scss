@@ -9,10 +9,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #777;
-    opacity: .8;
+    background-color: $theme_color;
     padding: 12px 10px;
-    z-index: 999;
+    z-index: 9999;
     @include media(mdlg) {
         display: none;
     }

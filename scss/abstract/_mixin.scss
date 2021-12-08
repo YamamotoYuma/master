@@ -152,23 +152,32 @@
 
 //--------------------------------
 //  フルードイメージ
-//  @param float height 横幅に対する高さの割合を％で指定（単位省略）
+//  @param int width 幅を単位なしで指定
+//  @param int height 高さを単位なしで指定
 //--------------------------------
-@mixin fluid ($height:'62.5') { //[引数]横幅に対する高さの比率
+@mixin fluid ( $width:1, $height:1 ) {
     position: relative;
-    &::after {
+	overflow: hidden;
+    &::before {
         content: '';
         display: block;
         width: 100%;
-        padding-top: $height * 1%;
+		height: auto;
+        padding-top: percentage( $height / $width );
     }
-    & > img {
-        position: absolute;
-        top: 0;
-        left: 0;
+	> * {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+    & img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+		transition: .25s;
     }
 }
 

@@ -1,107 +1,53 @@
 /*--------------------------------
-    ページトップへ戻るボタン
+    マイクロインタラクションver
 --------------------------------*/
 .el_pageTop {
-    display: none;
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+	z-index: 9000;
+    right: 7px;
+    bottom: 7px;
+	transform: scale(0);
+	transition-property: opacity, transform;
+    transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+	transform-origin: center;
+	&.js_active {
+		transform: scale(1);
+		> a::before {
+			opacity: 1;
+			transform: translateY(0);
+			transition-property: opacity, transform;
+    		transition-delay: 0.25s;
+			transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+			transition-duration: 0.25s;
+		}
+	}
     > a {
         position: relative;
-        display: block;
-        background-color: #777;
-        opacity: .8;
+        display: flex;
+		justify-content: center;
+		align-items: center;
+        background-color: $theme_color;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         text-decoration: none;
         line-height: 1;
         &:focus,
         &:hover {
             opacity: .6;
+			transform: scale(1.1);
         }
         &::before {
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            content: '\f0d8';
-            font-size: 25px;
-            color: #fff;
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            top: 50%;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            text-align: center;
-            transform: translateY(-50%);
-        }
-    }
-    @include media(sm) {
-        right: 7px;
-        bottom: 7px;
-        > a {
-            width: 40px;
-            height: 40px;
-            &::before {
-                font-size: 20px;
-                width: 20px;
-                height: 20px;
-            }
+			opacity: 0;
+			transform: translateY(10px);
+            content: '';
+			display: block;
+			width: 14px;
+			height: 10px;
+			background-image: url('../img/page_top.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
         }
     }
 }
-
-/*--------------------------------
-    マイクロインタラクションver
---------------------------------*/
-// .el_pageTop {
-//     position: fixed;
-//     right: 15px;
-//     bottom: 15px;
-// 	transform: scale(0);
-// 	transition-property: opacity, transform;
-//     transition-duration: 0.25s;
-// 	transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-// 	transform-origin: cetenr;
-// 	&.js_active {
-// 		transform: scale(1);
-// 		> a::before {
-// 			opacity: 1;
-// 			transform: translateY(0);
-// 			transition-property: opacity, transform;
-//     		transition-delay: 0.25s;
-// 			transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-// 			transition-duration: 0.25s;
-// 		}
-// 	}
-//     > a {
-//         position: relative;
-//         display: flex;
-// 		justify-content: center;
-// 		align-items: center;
-//         background-color: $theme_color;
-//         border-radius: 50%;
-//         width: 40px;
-//         height: 40px;
-//         text-decoration: none;
-//         line-height: 1;
-//         &:focus,
-//         &:hover {
-//             opacity: .6;
-// 			transform: scale(1.1);
-//         }
-//         &::before {
-// 			opacity: 0;
-// 			transform: translateY(10px);
-//             content: '';
-// 			display: block;
-// 			width: 14px;
-// 			height: 10px;
-// 			background-image: url('../img/arrow_04.svg');
-// 			background-repeat: no-repeat;
-// 			background-size: cover;
-//         }
-//     }
-// }

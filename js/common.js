@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	/*--------------------------------
-	 * モバイルドロワーメニュー
+	 * モバイルメニュー：ドロワー展開
 	--------------------------------*/
 	$('.js_menuTrigger').on('click', function () {
 		if ($(this).hasClass('is_active')) {
@@ -37,16 +37,25 @@ jQuery(document).ready(function ($) {
 		$(this).toggleClass("js_open");
 	});
 
+	/*------ ボディエリアの高さを調整 -------*/
+    $(function(){
+        var headerHight = $('.bl_mobileMenu_header').innerHeight(); // ヘッダーの高さを取得.
+        var footerHight = $('.bl_mobileMenu_footer').innerHeight(); // フッターの高さを取得.
+        var viewHeight  = $(window).height(); // 表示画面の高さを取得.
+        var bodyHeight  = viewHeight - headerHight - footerHight; // ボディの高さを算出.
+
+        $('.bl_mobileMenu_body').css('height', bodyHeight + 'px'); // ボディの高さをCSSに反映.
+    });
+
 	/*--------------------------------
 	 * ページトップへ戻る：100pxスクロールしたら表示
 	--------------------------------*/
 	var pagetop = $('.js_pageTop');
-	pagetop.hide();
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 100) {
-			pagetop.fadeIn();
+			pagetop.addClass('js_active');
 		} else {
-			pagetop.fadeOut();
+			pagetop.removeClass('js_active');
 		}
 	});
 

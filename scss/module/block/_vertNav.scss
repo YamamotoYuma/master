@@ -2,17 +2,22 @@
     縦並びナビゲーション（Footer内利用を想定）
 --------------------------------*/
 .bl_vertNavUnit {
-	margin: 0 -30px;
-    display: flex;
+	display: flex;
+	gap: 60px;
 	color: $footer_fontColor;
 	> * {
 		flex: 1;
+	}
+	@include media(sm) {
+		margin-left: auto;
+		margin-right: auto;
+		width: 280px;
+		max-width: 100%
 	}
 }
 
 .bl_vertNav {
 	@include ul;
-	margin: 0 30px;
 	a {
 		text-decoration: none;
 		color: inherit;

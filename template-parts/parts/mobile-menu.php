@@ -14,7 +14,7 @@ $nav = array(
 	'container'      => false,
 	'menu_id'        => 'mobile-menu',
 	'menu_class'     => 'bl_mobileMenu_nav',
-	'theme_location' => 'menu-1',
+	'theme_location' => 'sub-menu',
 );
 ?>
 
@@ -35,6 +35,17 @@ $nav = array(
 	ドロワーエリア生成
 --------------------------------->
 <div class="bl_mobileMenu js_mobileMenu">
-	<nav><?php wp_nav_menu( $nav ); // ナビゲーション. ?></nav>
+	<div class="bl_mobileMenu_header">
+
+	</div>
+	<!-- /.bl_mobileMenu_header -->
+	<div class="bl_mobileMenu_body">
+		<nav><?php wp_nav_menu( $nav ); // ナビゲーション. ?></nav>
+	</div>
+	<!-- /.bl_mobileMenu_body -->
+	<div class="bl_mobileMenu_footer">
+		
+	</div>
+	<!-- /.bl_mobileMenu_footer -->
 </div>
 <!-- ./bl_mobileMenu -->

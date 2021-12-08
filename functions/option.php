@@ -279,10 +279,10 @@ function custom_welcome_panel() {
  */
 
 /** ロゴの画像を変更 */
-function custom_login_logo() {
-	echo '<style type="text/css">.login h1 a { width: 100% !important; height: 150px !important; background: url(' . esc_url( get_bloginfo( 'template_directory' ) ) . '/img/login-logo.png) no-repeat center center !important; margin-bottom: 30px !important; background-size: contain !important;}</style>';
-}
-add_action( 'login_enqueue_scripts', 'custom_login_logo' );
+// function custom_login_logo() {
+// 	echo '<style type="text/css">.login h1 a { width: 100% !important; height: 150px !important; background: url(' . esc_url( get_bloginfo( 'template_directory' ) ) . '/img/login-logo.png) no-repeat center center !important; margin-bottom: 30px !important; background-size: contain !important;}</style>';
+// }
+// add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 
 /** ロゴのリンク先を変更 */
 function custom_login_logo_url() {
@@ -318,12 +318,12 @@ add_action(
  *
  * @param str $query 投稿タイプ.
  */
-function filter_search( $query ) {
-	if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
-		$query->set( 'post_type', array( 'post' ) );
-	}
-}
-add_filter( 'pre_get_posts', 'filter_search' );
+// function filter_search( $query ) {
+// 	if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
+// 		$query->set( 'post_type', array( 'post' ) );
+// 	}
+// }
+// add_filter( 'pre_get_posts', 'filter_search' );
 
 /**
  * --------------------------------

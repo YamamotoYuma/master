@@ -13,7 +13,7 @@
 $nav_sticky = array(
 	'container'      => false,
 	'menu_class'     => 'bl_stickyNav', // 「ul」要素にクラス指定.
-	'theme_location' => 'menu-1', // 使用するメニューを指定.
+	'theme_location' => 'main-menu', // 使用するメニューを指定.
 );
 
 /*

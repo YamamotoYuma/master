@@ -16,7 +16,7 @@
     }
     figure {
         border: 1px solid #e5e5e5;
-        @include fluid(100);
+        @include fluid;
         > img {
             border: 1px solid #fff;
         }
@@ -99,7 +99,7 @@
 	&.left {
 		padding-right: 15px;
 		figure {
-			@include fluid(100);
+			@include fluid;
 			width: 65px;
 		}
 	}

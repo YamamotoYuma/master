@@ -28,10 +28,10 @@ require get_template_directory() . '/inc/customizer.php';
 require get_stylesheet_directory() . '/functions/widget-nav.php';
 
 /*------ Advanced Custom Field オプションページ関連 -------*/
-require get_stylesheet_directory() . '/functions/acf.php';
+// require get_stylesheet_directory() . '/functions/acf.php';
 
 /*------ カスタム投稿タイプ、カスタムタクソノミー -------*/
-require get_stylesheet_directory() . '/functions/post-type.php';
+// require get_stylesheet_directory() . '/functions/post-type.php';
 
 /*------ スタイルシート、スクリプトインクルード -------*/
 require get_stylesheet_directory() . '/functions/enqueue.php';
@@ -50,4 +50,4 @@ require get_stylesheet_directory() . '/functions/option.php';
 *  ウィジェットブロックの追加
 --------------------------------
 */
-require get_stylesheet_directory() . '/widget/class-relatedpost.php';
+// require get_stylesheet_directory() . '/widget/class-relatedpost.php';
